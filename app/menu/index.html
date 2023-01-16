@@ -4,7 +4,7 @@
 	<title>SOLACE Menu</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="/lib/img/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="../../lib/img/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="menu.css"/>
 </head>
 
@@ -19,7 +19,7 @@
 <!-- No Javascript Error -->
 <noscript class="noscript">
 	<h2 title="Error Loading App">Error Loading App</h2>
-	<p><img src="/lib/img/error.svg" width="100" title="Error Loading App" alt="Error Loading App"></p>
+	<p><img src="../../lib/img/error.svg" width="100" title="Error Loading App" alt="Error Loading App"></p>
 	<p>You must have Javascript enabled to use this app.</p>
 	<p>Please check your settings and reload.</p>
 	<p><a href="/">Try Again</a></p>
@@ -31,37 +31,37 @@
 	<div id="menu">
 		<button type="button" id="directory" onclick="loadURL('directory.solace.network');" class="menubtn red" title="Directory">
 			<div class="fbcont">
-				<div class="largeicon"><img src="/lib/img/directory.svg" title="Directory"></div>
+				<div class="largeicon"><img src="../../lib/img/directory.svg" title="Directory"></div>
 				<div class="label"><label for="directory">Directory</label></div>
 			</div>
 		</button>	
 		<button type="button" id="education" onclick="route(this)" class="menubtn purple" title="Education">
 			<div class="fbcont">
-				<div class="largeicon"><img src="/lib/img/education.svg" alt="Education"></div>
+				<div class="largeicon"><img src="../../lib/img/education.svg" alt="Education"></div>
 				<div class="label"><label for="education">Education</label></div>
 			</div>
 		</button>
 		<button type="button" id="garden" onclick="loadURL('garden.solace.network');" class="menubtn green" title="Garden">
 			<div class="fbcont">
-				<div class="largeicon"><img src="/lib/img/garden.svg" title="Click To Load Garden"></div>
+				<div class="largeicon"><img src="../../lib/img/garden.svg" title="Click To Load Garden"></div>
 				<div class="label"><label for="garden">Garden</label></div>
 			</div>
 		</button>
 		<button type="button" id="home" onclick="route(this)" class="menubtn orange" title="Home">
 			<div class="fbcont">
-				<div class="largeicon"><img src="/lib/img/home.svg" title="Home"></div> 
+				<div class="largeicon"><img src="../../lib/img/home.svg" title="Home"></div> 
 				<div class="label"><label for="home">Home</label></div>
 			</div>	
 		</button>
 		<button type="button" id="library" onclick="route(this)" class="menubtn blue" title="Library">
 			<div class="fbcont">
-				<div class="largeicon"><img src="/lib/img/library.svg" alt="Library"></div>
+				<div class="largeicon"><img src="../../lib/img/library.svg" alt="Library"></div>
 				<div class="label"><label for="library">Library</label></div>
 			</div>
 		</button>
 		<button type="button" id="network" onclick="route(this)" class="menubtn silver" title="Network">
 			<div class="fbcont">
-				<div class="largeicon"><img src="/lib/img/network.svg" alt="Network"></div>
+				<div class="largeicon"><img src="../../lib/img/network.svg" alt="Network"></div>
 				<div class="label"><label for="network">Network</label></div>
 			</div>
 		</button>
@@ -136,7 +136,7 @@
 	<h1>SOLACE Network</h1>
 	<p id="tt">This Module Has Not Been Created Yet</p>
 	<!-- DEV USE: -->
-	<img src="/lib/img/1x1.png" onload="testFun()">
+	<img src="../../lib/img/1x1.png" onload="testFun()">
    
 </template>
 
@@ -192,14 +192,14 @@
 	</p>
 	<br>
 	<!-- show app data (loads iFrame which shows data)-->
-	<iframe src="/app/menu/appdata.html" style="width:100%;height:300px;"></iframe>
+	<iframe src="appdata.html" style="width:100%;height:300px;"></iframe>
 </template>
 
 <template id="page_status">
 	<div style="text-align: center";>
 		<h1>Network Status</h1>
 		<div id="netstatus"></div>
-		<img src="/lib/img/1x1.png" onLoad="showNetStatus()">
+		<img src="../../lib/img/1x1.png" onLoad="showNetStatus()">
 	</div>	
 </template>
 
