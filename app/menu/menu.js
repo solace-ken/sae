@@ -12,10 +12,10 @@
 // ------------------------------------------------------
 
 // version
-const menuver = '1.0.6 alpha';
+const menuver = '1.0.7 alpha';
 
 // SOLACE Menu routemap 
-const menumap = '/lib/routemap.json';					
+const menumap = 'routemap.json';					
 
 // page elements
 const container = document.getElementById('container');
@@ -23,12 +23,12 @@ const viewer = document.getElementById('viewer');
 const footer = document.getElementById('footer');
 
 // images
-const reddot = '/lib/img/circle-red-filled.svg';		// red status icon
-const yellowdot = '/lib/img/circle-yellow-filled.svg';	// yellow status icon (not currently used)
-const greendot = '/lib/img/circle-green-filled.svg';	// green status icon
-const bluedot = '/lib/img/circle-blue-filled.svg';		// blue status icon (not currently used)
-const blacklogo = '/lib/img/solace-logo-round.svg';		// black round SOLACE logo
-const bluelogo = '/lib/img/solace-logo-round-blue.svg';	// blue round SOLACE logo
+const reddot = '../../lib/img/circle-red-filled.svg';			// red status icon
+const yellowdot = '../../lib/img/circle-yellow-filled.svg';		// yellow status icon (not currently used)
+const greendot = '../../lib/img/circle-green-filled.svg';		// green status icon
+const bluedot = '../../lib/img/circle-blue-filled.svg';			// blue status icon (not currently used)
+const blacklogo = '../../lib/img/solace-logo-round.svg';		// black round SOLACE logo
+const bluelogo = '../../lib/img/solace-logo-round-blue.svg';	// blue round SOLACE logo
 
 // load the SOLACE Menu
 showSolaceMenu();
