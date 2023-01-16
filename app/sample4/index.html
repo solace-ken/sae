@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>App 4</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="app4.css"/>
+	<script>
+	// make sure the user really wants to exit
+	function confirmClose() {
+		if (confirm("Are you sure you want to exit?") == true) {
+		  appHandBack('/app/app4');
+		} 
+		else { return false; }	
+	}	
+	</script>	
+</head>
+
+<body>
+
+<!-- user interface -->
+<div id="ui">
+	<div id="left">
+		<div id="buttonblock">
+			<div id="block1">
+				<button id="green" onclick="route(this)" class="btn">Red Light</button>
+			</div>
+			<div id="block2">
+				<a href="javascript:void(0)" id="home" onclick="route(this)">Default</a>
+				<br><br>
+				<a href="javascript:void(0)" id="more" onclick="route(this)">More Content</a>
+				<br><br>
+				<a href="javascript:void(0)" onclick="confirmClose()">Quit App 4</a>
+			</div>
+			<div id="info" class="pics" onclick="route(this)" title="Click For More Info"></div>
+		</div>
+	</div>
+	<div id="right">
+		<div id="main"></div>
+		<div id="footer">
+			<div class="statmsg">Status: Ready</div>
+			<div id="dot"><img src="circle-green.svg" width="25" height="25" title="STATUS: GREEN"/></div>
+		</div>
+	</div>
+</div>
+
+<!-- ===============  site templates =============== -->
+
+<template id="redcircle">
+	<img src="circle-red.svg" width="25" height="25" title="STATUS: RED"/>
+</template>
+
+<template id="greencircle">
+	<img src="circle-green.svg" width="25" height="25" title="STATUS: GREEN"/>
+</template>
+
+<template id="redlight">
+	<button id="green" onclick="route(this)" class="btn">Red Light</button>
+</template>
+
+<template id="greenlight">
+	<button id="red" onclick="route(this)" class="btn green">Green Light</button>
+</template>
+
+<template id="morecontent">
+	<h1>More Content</h1>
+	<img src="image3.svg" width="40%" height="40%" style="float:right;margin:10px;" title="Some random image"/>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p> 
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p> 
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p> 
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+</template>	
+
+<template id="moreinfo">
+	<h1>More Information</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p> 
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p> 
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p> 
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+</template>	
+
+<template id="defaultcontent">
+	<h1>Default Content</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p> 
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p> 
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p> 
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+</template>	
+
+<script src="/lib/js/logger.js"></script>
+<script src="/lib/js/functions.js"></script>
+<script src="/lib/js/storage.js"></script>
+<script src="/lib/js/router.js"></script>
+<script src="/lib/js/solace.js"></script>
+
+<!-- page-specific javascript functions -->
+<script>
+
+// load default content using 'loadTemplate'
+// function from router.js
+const targ = document.getElementById('main');
+targ.innerHTML = loadTemplate('defaultcontent');
+
+// load the first image
+const info = document.getElementById('info');
+
+// start the slideshow
+showImgOne(); 
+
+// show image for 4 seconds, clear, call next function
+function showImgOne() 
+{
+	info.style.backgroundImage = "url('image1.svg')";
+	setTimeout(function() { 
+		info.style.backgroundImage = "";
+		showImgTwo();
+	}, 4000); // 4 second delay
+}
+function showImgTwo() 
+{
+	info.style.backgroundImage = "url('image2.svg')";
+	setTimeout(function() { 
+		info.style.backgroundImage = "";
+		showImgThree();
+	}, 4000);
+}
+function showImgThree() 
+{
+	info.style.backgroundImage = "url('image3.svg')";
+	setTimeout(function() { 
+		info.style.backgroundImage = "";
+		showImgOne();
+	}, 4000);
+}
+
+// start the router
+startRouter();
+</script>
+
+</body>
+</html>

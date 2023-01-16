@@ -1,0 +1,153 @@
+            /* // is the user passing a width value?
+            if (params.w) {
+            // if so, save value and convert to lowercase
+              let w = params.w.toLowerCase();
+            // does it contain "%" or "px"?
+              let pcent = w.match(/%/);
+              let pixls = w.match(/px/);
+            // if pixels & percent are null, we should have a number
+              if ((pcent === null) && (pixls === null)) {
+              // make sure it's a positive integer larger than the default width (350px)
+                if ((isPositiveInteger(w)) && (w > 350)) {
+                  log ('We have a valid spinner WIDTH number with no units specified. Default unit is pixels.','engine');
+                  log(`Displaying a spinner which is ${w}px wide`,'engine');
+                  document.getElementById('spinner').style.width = w + 'px';
+                }
+                else {
+                  log('You have to request a valid number/unit for spinner WIDTH value!','error');
+                  log(`Your WIDTH request ("${w}") is not supported. Valid options:`,'engine');
+                  log('=> number - a positive integer greater than 350','engine');
+                  log('=> number + "%" (e.g. 90%) - number must be between 25 and 100','engine');
+                  log('=> number + "px" (e.g. 900px) - number must be between 350 and 5000','engine');
+                }
+              } */
+
+            // if we have a '%' value, user is requesting percentage width
+            /*   if (pcent) { 
+                console.log('Percent: ' + w + '%'); 
+                //document.getElementById('spinner').style.width = w + '%';
+              }
+
+            // if we have a 'px' value, user is requesting pixel width (default)
+              if (pixls) { 
+                console.log('Pixels: ' + w);
+                //document.getElementById('spinner').style.width = w + 'px';
+              }
+
+            }
+
+            // is user passing a height value?
+            if (params.h) {
+
+            } */
+
+// move this stuff from menu to API
+
+	// try to grab hash from URL (if any)
+	/* var h = location.hash;
+	// handle the URL hash
+	if (h) {
+		switch (h) {
+			case '#installed': // show the installed apps template
+			  viewer.innerHTML = loadTemplate('installed_apps');
+			  break;
+			case '#available': // show the available_apps template
+			  viewer.innerHTML = loadTemplate('available_apps');
+			  break;
+			case '#status': // show the online status template
+			  viewer.innerHTML = loadTemplate('page_status');
+			  break;
+			case '#settings': // show the settings template
+			  viewer.innerHTML = loadTemplate('page_settings');
+			  break;
+			default: // default is 404 page for unknown hashtags
+			  viewer.innerHTML = loadTemplate('not_found');
+		}
+	}
+	// otherwise, load the SOLACE Menu
+	else {
+		viewer.innerHTML = loadTemplate('solace_menu');
+	} */
+
+
+re-org stuff:
+
+// DEV USE: 1/15 - possibly deprecated
+// merging multiple functions together
+//
+// load SOLACE Menu
+// groups 3 functions into one
+//function loadSolaceMenu() {
+	// Show SOLACE Menu
+	//showSolaceMenu();			
+	// Start router (with menu routemap)
+	//startRouter(menumap);
+	// Animate SOLACE icon once after 4 seconds
+	// visual indicator for users
+	//logoSpin();	
+//}
+
+css menu re-org
+
+	/* position: relative;
+	width: 98.6vw;
+	min-width: 330px;
+	min-height: 360px; 
+	border: 3px solid red;
+	padding: 0;
+	margin: 5px auto;
+	display: none;	
+	overflow: hidden; 
+	*/
+
+  /* 	position: absolute;
+	bottom: 43px;
+	top: 0;
+	left: 0;
+	height: 84%;
+	width: 96%;
+	padding: 8px;
+	background-color: white;
+	border: 2px dotted black;
+	overflow-y: auto; */
+
+  	#container { 
+		min-height: 265px; 
+	}
+	/* resize divs for vertical orientation 
+	.menubtn {
+		padding: 0 10px 0 10px;
+		width: 16.66vw;
+		height: 60vh;
+		min-height: 185px;
+	}
+	/* change menu from column to row 
+	#menu { 
+		max-width: 1200px;
+		flex-flow: row nowrap; 
+		justify-content: space-between;
+	}
+	/* change button content from row to column
+	.fbcont {
+		height: 140px;
+		flex-flow: column wrap;
+		justify-content: center;
+	}
+	/* resize large icons 
+	.largeicon {
+		width: auto;
+		height: 100px;
+		max-height: 250px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.largeicon img {
+		width: 100%;
+		height: 100%;
+	}
+	/* adjust text labels 
+	.label {
+		text-align: center;
+		margin-top: 4px;
+		font-size: 16px;
+	}

@@ -1,0 +1,171 @@
+html, body {
+	background-color: white;
+	color: black;
+	font-family: sans-serif;
+	font-size: 14px;
+	height: calc(100% - 4px);
+	width: calc(100% - 4px);
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+button {
+	font-weight: bold;
+	font-size: 15px;
+	padding: 3px 5px 3px 5px;
+	text-align: center;
+	width: 90px;
+	/* margin: 25px 0 0 10px; */
+}
+
+#ui {
+	width: 100%;
+	height: 100%;
+	min-height: 475px;
+	min-width: 520px;
+	border: 3px solid saddlebrown;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+#topbar {
+	width: 100%;
+	height: 10.4%;
+	background-color: #b8e2ff;	
+	border-bottom: 3px solid saddlebrown;
+	margin: 0;
+	text-align: center;
+}
+
+#navgrp {
+	padding: 5px 0 0 5px;
+	height: 25px;
+	width: 90%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}
+
+a:link, a:visited {
+	color: navy;
+	font-weight: bold;
+	font-size: 12px;
+	margin-right: 20px;
+}
+
+a:hover, a:active {
+	
+}
+
+#mainview {
+	display: flex;
+	flex-flow: row, nowrap;
+	width: auto;
+	height: 90%;
+	background-color: #ffe8be;
+}
+
+#left {
+	width: 14%;
+	height: 100%;
+	border-right: 3px solid saddlebrown;
+	margin-right: 1px;
+	overflow: hidden;
+	text-align: center;
+}
+
+#boxa {
+	height: 20%;
+	width: 100%;
+	background-color: #f9b0c2;
+	font-weight: bold;
+	font-size: 16px;
+	user-select: none;
+}
+
+#boxb {
+	height: 25%;
+	width: 100%;
+	background-color: #dda1ff;
+	border-top: 3px solid saddlebrown;	
+	border-bottom: 3px solid saddlebrown;
+	font-weight: bold;
+	font-size: 16px;
+	user-select: none;	
+}
+
+.clickme {
+	margin-top: 15px;
+	background-color: #c3ffa1;
+}
+
+#boxc {
+	height: 55%;
+	width: 100%;
+	background-color: #fbdada;
+	font-weight: bold;
+	font-size: 16px;
+	user-select: none;	
+}
+
+#right {
+    width: 86.8%;
+	height: 98%;
+	background-color: #ffe8be;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+#closebtn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 5px 5px 0 0;
+	width: 25px;
+	height: 25px;
+	background-image: url('x.svg');	
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+	background-color: transparent;
+}
+
+#closebtn:hover, #closebtn:active {
+	background-color: red;
+}
+
+.box {
+	margin: 5px;
+	padding: 5px;
+}
+
+.tan {
+	background-color: #ffe8be;
+	height: 90%;
+}
+
+.gold {
+	background-color: #ffd700;
+	padding-top: 10px;
+	height: 95%;
+}
+
+.purple {
+	background-color: #e58fff;
+	padding-top: 10px;
+	height: 90%;
+}
+
+.green {
+	background-color: forestgreen;
+	padding-top: 10px;
+	height: 95%;
+}

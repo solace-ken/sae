@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>App 1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="stylesheet" type="text/css" href="app1.css"/>
+</head>
+
+<body>
+
+<div id="mytarget">
+	<header id="topbar"></header>
+	<main id="main"></main>
+	<footer id="footer"></footer>
+</div>
+
+<!-- Page Templates -->
+
+<template id="default_nav">
+	<div id="navbuttons">
+		<button id="button1" onclick="route(this)">Page 1</button>
+		<button id="button2" onclick="route(this)">Page 2</button>
+		<button id="button3" onclick="route(this)">Page 3</button>
+		<button id="button4" onclick="route(this)">Page 4</button>
+		<button id="button5" onclick="route(this)">Page 5</button>
+		<button id="closebtn" onclick="confirmClose()" title="Close"></button>
+	</div>
+</template>
+
+<template id="default_content">
+	<div id="welcome">
+		<h3>Welcome to Sample App 1!</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+		<br><br><br>
+	</div>
+</template>			
+
+<template id="default_links">
+	<div id="links">
+		<span class="label">Links:</span>
+		<a href="javascript:void(0)" id="link1" onclick="route(this)">Page 6</a>
+		<a href="javascript:void(0)" id="link2" onclick="route(this)">Page 7</a>
+		<a href="javascript:void(0)" id="link3" onclick="route(this)">Page 8</a>
+		<a href="javascript:void(0)" id="link4" onclick="route(this)">Page 9</a>
+		<a href="javascript:void(0)" id="link5" onclick="route(this)">Page 10</a>
+	</div>
+</div>
+</template>
+
+<template id="page_1" class="pages">
+	<a name="top"></a>
+	<h1>Page 1</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<img src="/lib/img/1x1.png" onload="jumpToTop()">
+	<br><br><br>
+</template>
+
+<template id="page_2" class="pages">
+	<a name="top"></a>
+	<h1>Page 2</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>	
+	<img src="/lib/img/1x1.png" onload="jumpToTop()">
+	<br><br><br>
+</template>
+
+<template id="page_3" class="pages">
+	<a name="top"></a>
+	<h1>Page 3</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>	
+	<img src="/lib/img/1x1.png" onload="jumpToTop()">
+	<br><br><br>
+</template>
+
+<template id="page_4" class="pages">
+	<a name="top"></a>
+	<h1>Page 4</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>	
+	<img src="/lib/img/1x1.png" onload="jumpToTop()">
+	<br><br><br>
+</template>
+
+<template id="page_5" class="pages">
+	<a name="top"></a>
+	<h1>Page 5</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>	
+	<img src="/lib/img/1x1.png" onload="jumpToTop()">
+	<br><br><br>
+</template>
+
+<template id="page_6" class="pages">
+	<h1>Page 6</h1>
+	<p style="background-color:#A9FBC3; padding:10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<br><br><br>
+</template>
+
+<template id="page_7" class="pages">
+	<h1>Page 7</h1>
+	<p style="background-color:#F2B7C6; padding:10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<br><br><br>
+</template>
+
+<template id="page_8" class="pages">
+	<h1>Page 8</h1>
+	<p style="background-color:#EDAE49; padding:10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>	
+	<br><br><br>
+</template>
+
+<template id="page_9" class="pages">
+	<h1>Page 9</h1>
+	<p style="background-color:#19297C; color:white; padding:10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<br><br><br>
+</template>
+
+<template id="page_10" class="pages">
+	<h1>Page 10</h1>
+	<p style="background-color:#F92A82; color:white; padding:10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis, elit feugiat rutrum facilisis, odio dolor varius lectus, porta aliquam quam mauris a leo. Aliquam turpis neque, vehicula et odio vitae, condimentum viverra nisi. Fusce eget accumsan libero, eu convallis ante. Morbi quam tortor, posuere a augue eget, vehicula feugiat ante. Integer id velit nibh. Cras volutpat augue eget metus porttitor malesuada. Donec aliquet lorem sed sollicitudin aliquet.</p>
+	<br><br><br>
+</template>
+
+<script src="/lib/js/logger.js"></script>
+<script src="/lib/js/functions.js"></script>
+<script src="/lib/js/storage.js"></script>
+<script src="/lib/js/session.js"></script>
+<script src="/lib/js/router.js"></script>
+<script src="/lib/js/ui.js"></script>
+<script src="/lib/js/solace.js"></script>
+<script src="app1.js"></script>
+
+</body>
+</html>

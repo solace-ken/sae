@@ -1,0 +1,478 @@
+/*
+* -----------------------------------------------------
+* sae.css - stylesheet for SOLACE App Engine
+* -----------------------------------------------------
+*/
+
+/* color variables */
+:root {	
+  --red: #F8545D; 
+  --purple: #A3A2F3;
+  --green: #26DD78;
+  --orange: #FF8F40;
+  --lightblue: #A3E7FC;
+  --silverlike: #EBE4DE;
+  --lightgray: #EEEEEE;
+  --darkgray: #878787;
+}
+
+html, body {
+	background-color: white;
+	color: black;
+	font-family: sans-serif;
+	font-size: 16px;
+	height: calc(100% - 3px);
+	width: calc(100% - 3.5px);
+	margin: 0;
+	padding: 0;
+	/* overflow: hidden; */
+}
+
+h1 { font-size: 24px; }
+h2 { font-size: 21px; }
+h3 { font-size: 18px; }
+h4 { font-size: 16px; }
+
+/* noscript error message styling */
+.noscript { 
+	text-align: center; 
+	border: 3px dashed red;
+	padding: 25px;
+	width: 90vw;
+	margin: 25px auto;
+}
+.noscript h2 {
+	font-size: 36px;
+	margin-top: 30px;
+	padding: 0;
+}	
+.noscript p { font-size: 18px; }
+
+/* iframe styling */
+iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+	overflow: hidden;
+}
+
+/* target DIV */
+#ui {
+	position: relative;
+	width: 100%;
+	min-width: 330px;
+	height: 100%;
+	border: 3px solid var(--darkgray); 
+	overflow: hidden;
+	padding: 0;
+	margin: auto;
+	display: none;
+}
+
+/* SOLACE Logo */
+.logo {
+	width: 250px;
+	margin: 25px auto;
+	display: block;
+}
+
+/* Error */
+.errmsg {
+	width: 90vw;
+	margin: 25px auto;
+	padding: 20px;
+	border: 3px dashed red;
+	text-align: center;
+	display: none;
+}
+.title {
+	color: red;
+	font-family: monospace;	
+	font-size: 18px;
+}
+.cause {
+	color: red;
+	font-family: monospace;
+}
+.solution {
+	font-family: monospace;
+	padding-bottom: 10px;
+}
+
+/* Spinner */
+.spinner {
+	width: 350px;
+	min-height: 120px;
+	border: 2px solid #878787; /* dark gray */
+	border-radius: 16px;
+	box-shadow: 4px 3px 4px 1px #969696;
+	margin: 50px auto;
+	display: none;
+	text-align: center;
+	user-select: none;
+	background-color: white;
+}
+
+.header {
+	margin: 15px 0 0 0;
+	font-family: monospace;
+	color: black;
+	padding: 0;
+	font-size: 18px;
+	text-align: center;
+}
+
+.blocks { 
+	display: none; 
+	margin: 30px 0 30px 0;
+}
+
+.gears { 
+	display: none; 
+	margin-top: 10px;
+}
+
+.gears img { 
+	margin-top: 2px;
+}
+
+.message {
+	border: 0px dashed black;
+	margin: 5px 0 15px 0;
+	padding: 0;
+	font-family: monospace;
+}
+
+/* MENU LINKS */
+a.menu:link, a.menu:visited {
+	color: black;
+	text-decoration: none;
+}
+a.menu:active, a.menu:hover {
+	color: black;
+}
+
+/* Toggle Switch - used on Settings template */
+
+ /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 17px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Menu Flexbox */
+#menu {
+	display: flex;
+	flex-flow: column nowrap;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+/* Logo animations */
+.fadeinspin {
+	animation: fadeInSpin 1.4s;	
+}
+.fadeoutspin {
+	animation: fadeOutSpin 1.4s;	
+}
+.spin {
+	animation: spin 1s;
+}
+
+/* Fade-In, Spin Animation */
+@keyframes fadeInSpin {
+  0% { opacity: 0; transform: rotate(0deg); }
+  50% { opacity: 0.2; }
+  60% { opacity: 0.3; }
+  70% { opacity: 0.4; }
+  75% { opacity: 0.5; }
+  80% { opacity: 0.6; }
+  85% { opacity: 0.7; }
+  90% { opacity: 0.8; }
+  95% { opacity: 0.9; }
+  100% { opacity: 1; transform: rotate(-360deg); }
+}
+
+/* Spin, Fade-Out Animation */
+@keyframes fadeOutSpin {
+	0% { opacity: 1; transform: rotate(360deg); }
+	50% { transform: rotate(0deg); }
+	60% { opacity: 0.9; }
+	70% { opacity: 0.8; }
+	75% { opacity: 0.7; }
+	80% { opacity: 0.6; }
+	85% { opacity: 0.5; }
+	90% { opacity: 0.3; }
+	95% { opacity: 0.2; }
+	100% { opacity: 0; }
+  }
+
+/* Spin Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { opacity: 1.0; transform: rotate(-360deg); }  
+}
+
+/* Menu Buttons */
+/* Transparent buttons instead of anchor links prevents statusbar message on hover */
+.menubtn {
+	background-color: transparent;
+	cursor: pointer;
+	border: 2px solid black;
+	border-radius: 8px;
+	padding: 4px 8px 4px 8px;
+	margin-right: 5px;
+	margin-bottom: 4px;
+}
+
+.menubtn:hover {
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);
+  border: 2px solid gold;
+}
+
+/* Container Flexbox
+/* allows us to display button components in columns or rows */
+.container {
+	height: 35px;
+	display: flex;
+	flex-flow: row nowrap;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	justify-content: center;
+}
+.largeicon {
+	width: 50px;
+	height: 35px;
+	margin-right: 5px;
+	text-align: center;
+}
+.largeicon img {
+	width: 35px;
+	height: 35px;	
+}
+.label {
+	text-align: center;
+	font-size: 24px;
+}
+
+/* Main Viewing Area */
+#viewer {
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 8px;
+	margin: 0 auto;
+}
+
+/* Bottom Nav Bar */ 
+#footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 40px;
+	width: 100%;	
+	background-color: var(--lightgray);
+	border-top: 3px solid var(--darkgray);
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+/* Home Button (SOLACE menu) */
+.homebtn {
+	width: 40px;
+	height: auto;
+	margin-top: 3px;
+	margin-left: 2px;
+}
+.homebtn .solacemenu {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	margin-top: 1px;
+}
+
+/* show animation on hover */
+/* for mouseover image-swap see ui.js */
+.homebtn .solacemenu:hover {
+  animation-name: spinbtn;
+  animation-duration: 500ms;
+}
+/* logo rotation animation */
+@keyframes spinbtn {
+  0%   { transform: rotate(0); }
+  100% { transform: rotate(-360deg); }
+}
+
+/* App Buttons */
+.fbtns {
+	height: auto;
+	padding-top: 8px;
+	white-space: nowrap;
+}
+
+/* Status Icons Flexbox */
+/* TODO: turn these into buttons instead of links */
+#staticons {
+	padding-top: 7px;
+	padding-right: 5px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: right;
+	height: auto;
+	width: 60px;
+}
+
+.icons { 
+	margin-left: 5px;
+}
+
+.icons img {
+	height: 25px;
+	width: 25px;
+}
+
+/* Installed Apps Page */
+.installedapps {
+	border: 1px solid black;
+	text-align: left;
+	padding: 20px;
+}
+.installedapps li { padding-bottom: 10px; }
+
+/* Installed Apps Links */ 
+a.installed:link, a.installed:visited {
+	color: green;
+	font-size: 14px;
+	font-weight: bold;
+}
+ a.installed:hover, a:active {
+	color: red;
+	text-decoration: underline;
+}
+
+/* button background colors */
+.red { background-color: var(--red); }
+.purple { background-color: var(--purple); }
+.orange { background-color: var(--orange); }
+.blue { background-color: var(--lightblue);	}
+.green { background-color: var(--green); }
+.silver { background-color: var(--silverlike); }
+
+/*
+* -------------------------------------------
+* MEDIA QUERIES: 
+* change things based on screen size
+* ------------------------------------------- 
+*/
+
+/* small screen - not implemented yet */
+/* 
+@media only screen and (max-height: 329px) and (max-width: 624px) {
+} 
+*/
+
+@media only screen and (min-width: 625px) {	
+	#ui { 
+		min-height: 265px; 
+	}
+	#viewer {
+		min-height: 85vh;
+		overflow: hidden;
+		padding: 8px;
+		margin: 0 auto;
+	}
+	/* resize divs for vertical orientation */
+	.menubtn {
+		padding: 0 10px 0 10px;
+		width: 16.66vw;
+		height: 60vh;
+		min-height: 185px;
+	}
+	/* change menu from column to row */
+	#menu { 
+		max-width: 1200px;
+		flex-flow: row nowrap; 
+		justify-content: space-between;
+	}
+	/* change button content from row to column */
+	.container {
+		height: 140px;
+		flex-flow: column wrap;
+		justify-content: center;
+	}
+	/* resize large icons */
+	.largeicon {
+		width: auto;
+		height: 100px;
+		max-height: 250px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.largeicon img {
+		width: 100%;
+		height: 100%;
+	}
+	/* adjust text labels */
+	.label {
+		text-align: center;
+		margin-top: 4px;
+		font-size: 16px;
+	}
+}

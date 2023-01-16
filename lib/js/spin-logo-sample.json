@@ -1,0 +1,9 @@
+{
+	"tpl": "logo",
+    "sfx": "spin",
+	"width": "150",
+	"height": "150",
+    "image": "/lib/img/solace-logo-gold.svg",
+    "link": "https://foobar.com",
+    "title": "Click to go to Foobar Industries"
+}

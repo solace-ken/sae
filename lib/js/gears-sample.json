@@ -1,0 +1,8 @@
+{
+	"tpl": "spinner",
+	"width": "800px",
+	"height": "250px",
+	"header": "Sample Spinner",
+    "image": "gears",
+    "message": "Using 'gears' animation"
+}

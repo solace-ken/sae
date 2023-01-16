@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Network Status</title>
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="/lib/img/netstat.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	body {
+		background-color: white;
+	}
+	.netstat {
+		font-family: monospace;
+		font-size: 18px;
+		font-weight: bold;
+		text-align: center;
+		padding: 8px;
+		color: white;
+		width: 60%;
+		margin: 0 auto;
+		user-select: none;
+	}
+	.red { background-color: red; }
+	.green { background-color: green; }
+	</style>
+</head>
+
+<body>
+
+<p id="netstat" class="netstat"></p>
+
+<script src="/lib/js/storage.js"></script>
+<script>
+	const netstat = document.getElementById('netstat');
+	let online = navigator.onLine;
+	let saved = getSaved();
+	if (!saved) { createSaved(); }
+	if (online) {
+		netstat.innerText = 'ONLINE';
+		netstat.title = 'ONLINE';
+		netstat.classList.add('green');
+	}
+	else {
+		netstat.innerText = 'OFFLINE';
+		netstat.title = 'OFFLINE';
+		netstat.classList.add('red');
+	}
+	// Event Listeners:
+	// monitor online status and update icons
+	window.addEventListener('online', function(e) { // online:
+		netstat.innerText = 'ONLINE';
+		netstat.classList.remove('red');
+		netstat.classList.add('green');
+		setSaved({"online":true});
+		console.log('Status: %cONLINE','color:limegreen;font-weight:bold;');
+	});
+	window.addEventListener('offline', function(e) { // offline:
+		netstat.innerText = 'OFFLINE';
+		netstat.classList.remove('green');
+		netstat.classList.add('red');
+		setSaved({"online":false});
+		console.log('Status: %cOFFLINE','color:red;font-weight:bold;');
+	});
+</script>
+
+</body>
+</html>

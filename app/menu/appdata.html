@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Display App Data</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	body {
+		font-family: sans-serif;
+		color: black;
+		font-size: 16px;
+		background-color: white;
+	}
+	.url {
+		font-size: 11px;
+	}
+	</style>
+</head>
+
+<body>
+
+<div id="appdata">
+	<div style="padding: 20px; border: 2px dashed darkred; width: 70vw;">
+		<h1>App Data Goes Here</h1>
+		<p>Need to get this working again (fix function: "getMetaData()")</p>
+	</div>	
+</div>
+
+<!-- DEV USE: <script src="/lib/vendor/sha256.min.js"></script> -->
+
+<script>
+/* var html;
+// target DIV
+const targ = document.getElementById('appdata');
+// try to fetch App Data
+const data = getMetaData();
+// if we have no App Data show an error 
+// in the link, use /?action=reset option of boot.js
+if (!data) {
+	html = '<div style="text-align:center;">';
+	html +=	'<h1>Application Data Is Missing</h1>';
+	html += '<a href="/?action=reset" target="_parent" title="Try Reloading Missing Data">Try Reloading Missing Data</a>';
+	html += '</div>';
+	targ.innerHTML = html;
+}
+
+// otherwise, we have app data
+else {	
+	// convert release-date string to JS date object
+	var rd = isoStringToDate(data.releasedate);
+	// set it to more user-friendly format
+	const release = rd.toDateString();
+	// DEV NOTE: for now, all keys are valid
+	// key status message: valid
+	keystat = '<span style="color:green;font-weight:bold;vertical-align:middle;">Valid Key</span> <img src="/lib/img/key-green.svg" height="25" title="Valid Key" style="vertical-align:middle;">';
+	// generate full path to logo image
+	const logo = data.path + data.logo;	
+	// show the results
+	html = `
+		<table border="1" cellpadding="5" cellspacing="5" align="center" style="border-collapse:collapse;">
+			<tr>
+				<th colspan="2" style="vertical-align:middle;padding:8px;background-color:#EEEEEE;">
+					<img src="${logo}" width="25" title="Logo" style="vertical-align:middle; padding: 0 5px 0 5px;">
+					${data.brand}
+				</th>
+			</tr>
+			<tr>
+				<td>Version:</td>
+				<td>${data.version} ${data.subversion}</td>
+			</tr>
+			<tr>
+				<td>Released:</td>
+				<td>${release}</td>
+			</tr>
+			<tr>
+				<td>Status:</td>
+				<td>${keystat}</td>
+			</tr>
+			<tr>
+				<td>Web:</td>
+				<td class="url"><a href="${data.site}" target="_blank">${data.site}</td>
+			</tr>	
+			<tr>
+				<td>Support:</td>
+				<td class="url"><a href="${data.support}" target="_blank">${data.support}</a></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:center;"><button type="button" onclick="notYet()" style="margin:10px 0 10px 0;">Check For Update</button></td>
+			</tr>
+		</table>
+	`;
+	// update DOM
+	targ.innerHTML = html;
+} */
+</script>
+
+</body>
+</html>

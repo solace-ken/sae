@@ -1,0 +1,93 @@
+html, body {
+	background-color: white;
+	color: black;
+	font-family: sans-serif;
+	font-size: 14px;
+	height: calc(100% - 4px);
+	width: calc(100% - 4px);
+	margin: 0;
+	padding: 0;
+}
+
+#ui {
+	position: relative;
+	width: 100%;
+	min-width: 460px;
+	height: 100%;
+	border: 3px solid black;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;	
+}
+
+#topbar {
+	height: 10%;
+	min-height: 50px;
+	border-bottom: 3px solid black;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#closebtn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 5px 5px 0 0;
+	width: 25px;
+	height: 25px;
+	background-image: url('x.svg');	
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+	background-color: transparent;
+}
+
+#closebtn:hover, #closebtn:active {
+	background-color: red;
+}
+
+#content {
+	height: 83%;
+	padding: 15px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#head {
+	font-size: 36px;
+}
+
+.navbtn {
+	width: 90px;
+	background-color: #9eff9e;
+	border: 1px solid green;
+	color: black;
+	font-weight: bold;
+	font-size: 12px;
+	border-radius: 6px;
+	padding: 3px 7px 3px 7px;
+	margin-top: 10px;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.navbtn:hover {
+	border: 1px solid red;
+	background-color: #ff8d8d;
+}
+
+.red {
+	background-color: #ffa1a1;
+	padding: 10px;
+}
+
+.blue {
+	background-color: #7da9fa;
+	padding: 10px;
+}
+
+.orange {
+	background-color: #face7d;
+	padding: 10px;
+}

@@ -1,0 +1,396 @@
+/* 
+* --------------------------------------------
+* menu.css - stylesheet for SOLACE Menu
+* --------------------------------------------
+*/
+
+/* color variables */
+/* TODO: check these against sae.css */
+:root {	
+  --red: #F8545D; 
+  --purple: #A3A2F3;
+  --green: #26DD78;
+  --orange: #FF8F40;
+  --lightblue: #A3E7FC;
+  --silverlike: #EBE4DE;
+  --lightgray: #EEEEEE;
+  --darkgray: #878787;
+}
+
+/* TODO: investigate if 'html' is valid */
+body {
+	background-color: white;
+	color: black;
+	font-family: sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+h1 { font-size: 24px; }
+h2 { font-size: 21px; }
+h3 { font-size: 18px; }
+h4 { font-size: 16px; }
+
+/* noscript error message styling */
+.noscript { text-align: center; }
+.noscript h2 {
+	font-size: 36px;
+	margin-top: 30px;
+	padding: 0;
+}	
+.noscript p { font-size: 18px; }
+
+/* iframe styling */
+/* TODO: only one currently used is under Quick Settings, and it's broken */
+iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+/* ---------------------------------- */
+/* TARGET DIV (id="container")
+/* NOTE: 'ui' is a reserved name
+/* ---------------------------------- */
+
+/* Container Flexbox */
+#container {
+	/* border-top: 3px solid var(--darkgray);
+	border-left: 3px solid var(--darkgray);
+	border-right: 3px solid var(--darkgray); */
+	height: 120vh;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+/* Main Viewer */
+#viewer {
+	margin-top: 15px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	/* border: 2px dashed blue; */
+}
+
+/* Bottom Nav Bar */ 
+#footer {
+	position: fixed;
+  	left: 0;
+  	bottom: 0;
+	border-top: 3px solid var(--darkgray);
+	width: 100%;
+	height: 40px;
+	background-color: var(--lightgray);
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+/* Menu Flexbox */
+#menu {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 96%;
+	/* margin: 0 auto; */
+	padding: 10px;
+	justify-content: center;
+}
+
+/* Menu Buttons */
+/* Transparent buttons instead of anchor links prevents statusbar message on hover */
+.menubtn {
+	width: 100%;
+	background-color: transparent;
+	cursor: pointer;
+	border: 2px solid black;
+	border-radius: 8px;
+	padding: 4px 8px 4px 8px;
+	margin-right: 5px;
+	margin-bottom: 4px;
+}
+.menubtn:hover {
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);
+  border: 2px solid gold;
+}
+
+/* Flexbox Container 
+/* allows us to display button components in columns or rows */
+.fbcont {
+	height: 35px;
+	display: flex;
+	flex-flow: row nowrap;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	justify-content: center;
+}
+.largeicon {
+	width: 50px;
+	height: 35px;
+	margin-right: 5px;
+	text-align: center;
+}
+.largeicon img {
+	width: 35px;
+	height: 35px;	
+}
+.label {
+	text-align: center;
+	font-size: 24px;
+}
+
+/* MENU LINKS -- TODO: possibly deprecated (?) */
+a.menu:link, a.menu:visited {
+	color: black;
+	text-decoration: none;
+}
+/* a.menu:active, a.menu:hover {
+
+} */
+
+/* Home Button (SOLACE menu) */
+.homebtn {
+	width: 40px;
+	margin-top: 3px;
+	margin-left: 2px;
+}
+.homebtn .solacemenu {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	margin-top: 1px;
+}
+
+/* setptab - settings page table */
+.setptab {
+	margin-left: 10px;
+	padding: 10px;
+}
+
+/* setphead - settings page heading */
+.setphead {
+	margin-left: 10px;
+	font-size: 36px;
+}
+
+/* show animation on hover */
+/* for mouseover image-swap see ui.js */
+.homebtn .solacemenu:hover {
+  animation-name: spinbtn;
+  animation-duration: 500ms;
+}
+/* logo rotation animation */
+@keyframes spinbtn {
+  0%   { transform: rotate(0); }
+  100% { transform: rotate(-360deg); }
+}
+
+/* App Buttons */
+.fbtns {
+	height: auto;
+	padding-top: 8px;
+	white-space: nowrap;
+}
+
+/* Status Icons Flexbox */
+/* TODO: turn these into buttons instead of links */
+#staticons {
+	padding-top: 7px;
+	padding-right: 5px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: right;
+	height: auto;
+	width: 60px;
+}
+
+.icons { 
+	margin-left: 5px;
+}
+
+.icons img {
+	height: 25px;
+	width: 25px;
+}
+
+/* Installed Apps Page */
+.installedapps {
+	/* border: 1px solid gold; */
+	width: 95%;
+	text-align: left;
+	padding: 20px;
+}
+.installedapps li { padding-bottom: 10px; }
+
+/* Installed Apps Links */ 
+a.installed:link, a.installed:visited {
+	color: green;
+	font-size: 14px;
+	font-weight: bold;
+}
+ a.installed:hover, a:active {
+	color: red;
+	text-decoration: underline;
+}
+
+/* Available Apps Page */
+.availapps {
+	width: 95%;
+	text-align: left;
+	padding: 20px;
+}
+
+/* button background colors */
+.red { background-color: var(--red); }
+.purple { background-color: var(--purple); }
+.orange { background-color: var(--orange); }
+.blue { background-color: var(--lightblue);	}
+.green { background-color: var(--green); }
+.silver { background-color: var(--silverlike); }
+
+/* network status */
+.networkstatus {
+	text-align: center; 
+	padding: 10px;
+	font-family: monospace; 
+	margin: 0 auto;
+	height:30px; 
+	line-height: 30px;
+	width: 200px; 
+	border: 1px solid black; 
+	color: white; 
+	font-size: 24px; 
+	font-weight: bold;
+	user-select: none;	
+}
+.online {
+	background-color: green; 
+}
+.offline {
+	background-color: red;
+}
+
+/* Toggle Switches - used on Settings (from w3 schools) */
+
+ /* switch is the box around the slider */
+ .switch {
+	position: relative;
+	display: inline-block;
+	width: 34px;
+	height: 17px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+  
+  /* slider button */
+  .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  .slider:before {
+	position: absolute;
+	content: "";
+	height: 16px;
+	width: 16px;
+	left: 1px;
+	bottom: 1px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  input:checked + .slider {
+	background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+	-webkit-transform: translateX(16px);
+	-ms-transform: translateX(16px);
+	transform: translateX(16px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+	border-radius: 17px;
+  }
+  
+  .slider.round:before {
+	border-radius: 50%;
+  } 
+
+/*
+* -------------------------------------------
+* MEDIA QUERIES: 
+* change things based on screen size
+* ------------------------------------------- 
+*/
+
+/* small screen - not implemented yet */
+/* 
+@media only screen and (max-height: 329px) and (max-width: 624px) {
+} 
+*/
+
+@media only screen and (min-width: 625px) {	
+
+	#container {
+		height: 99vh;
+	}
+
+	/* resize divs for vertical orientation  */
+	.menubtn {
+		padding: 0 10px 0 10px;
+		width: 16.66vw;
+		height: 60vh;
+		min-height: 185px;
+	}
+	/* change menu from column to row  */
+	#menu { 
+		/* max-width: 1200px; */
+		flex-flow: row nowrap;
+		width: 95%;
+		margin: 0 auto;
+		/* border: 2px dashed darkorange; */
+	}
+	/* change button content from row to column */
+	.fbcont {
+		height: 140px;
+		flex-flow: column wrap;
+		justify-content: center;
+	}
+	/* resize large icons  */
+	.largeicon {
+		width: auto;
+		height: 100px;
+		max-height: 250px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.largeicon img {
+		width: 100%;
+		height: 100%;
+	}
+	/* adjust text labels */
+	.label {
+		text-align: center;
+		margin-top: 4px;
+		font-size: 16px;
+	}
+
+}

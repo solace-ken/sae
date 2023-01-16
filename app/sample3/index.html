@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>App 3</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="app3.css"/>
+</head>
+
+<body>
+
+<div id="ui">
+	<div id="topbar">
+		<button id="home" class="navbtn" onclick="route(this)"><img src="home.svg" width="16" height="16" style="vertical-align:middle"/> Home</button>
+		<button id="button1" class="navbtn" onclick="route(this)">Button 1</button>
+		<button id="button2" class="navbtn" onclick="route(this)">Button 2</button>
+		<button id="button3" class="navbtn" onclick="route(this)">Button 3</button>
+		<button id="closebtn" onclick="confirmClose()" title="Close"></button>
+	</div>
+	<main id="content"></main>
+</div>
+
+<!-- Sample App 3 -->
+<!-- this is one of two apps which uses an external 'templates.js' file to store HTML templates -->
+<!-- the other app is at: /app/dcb/ -->
+<script src="/lib/js/logger.js"></script>
+<script src="/lib/js/functions.js"></script>
+<script src="/lib/js/session.js"></script>
+<script src="/lib/js/storage.js"></script>
+<!-- load templates.js BEFORE router.js, so router can access template variables -->
+<script src="/app/app3/templates.js"></script>
+<script src="/lib/js/router.js"></script>
+<script src="/lib/js/solace.js"></script>
+<script>
+// there is no external script for this app (besides the templates.js file)
+// this is the app:
+
+// load the default template
+const main = document.getElementById('content');
+if (main) { main.innerHTML = default_text; }
+
+// start the router
+startRouter();
+
+// make sure the user really wants to exit
+function confirmClose() {
+	if (confirm("Are you sure you want to exit?") === true) {
+	  // if yes, hand back to SOLACE App Engine (SAE)
+	  appHandBack('/app/app3');
+	} 
+	else { return false; }	
+}	
+</script>
+
+</body>
+</html>

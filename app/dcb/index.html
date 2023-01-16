@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>dcb - dog | cat | bird</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="dcb.css"/>
+</head>
+
+<body>
+
+<div id="container">
+	<div id="topbar">
+		<div class="title" title="dcb - dog | cat | bird" onclick="showDogs()">dcb</div>
+		<div id="topbtns"></div>
+		<div id="closebtn"><a href="javascript:void(0)" onclick="confirmClose()"><img src="pics/x.svg" width="20" height="20" title="Close"/></a></div>
+	</div>
+	<div id="mainscreen">
+		<div id="leftcol" class="left">
+			<div id="picviewer"></div>
+			<div id="navbtns"></div>	
+		</div>
+		<div id="content" class="right"></div>
+	</div>
+</div>
+
+<script src="/lib/js/logger.js"></script>
+<script src="/lib/js/functions.js"></script>
+<script src="/lib/js/storage.js"></script>
+<!-- Sample Site 3 App templates -->
+<script src="templates.js"></script>
+<script src="/lib/js/router.js"></script>
+<script src="/lib/js/solace.js"></script>
+
+<!-- Sample Site 3 App functions -->
+<script src="dcb.js"></script>
+
+</body>
+</html>

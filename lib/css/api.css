@@ -1,0 +1,96 @@
+body {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+}
+/* user-selected text styling */
+::selection {
+    color: red;
+    background: yellow;
+}
+button {
+    background-color: darkslategray;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 6px;
+}
+button:hover {
+    background-color: white;
+    color: darkslategray;
+    border: 1px solid darkslategray;
+}
+.display {
+    background-color: #EEE;
+    height: 50vh;
+    border: 3px dashed black;	
+    padding: 25px;
+}
+.devuse {
+    width: 110px;
+    font-family: monospace;
+    font-weight: bold;
+    color: red;
+    border: 1px dashed red;
+    padding: 3px;
+}
+h4 {
+    font-family: monospace;
+    font-weight: bold;
+    color: green;
+}
+.optxt {
+    font-family: monospace;
+    font-color: black;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Spinner Styling -- DUPLICATED FROM SAE.CSS TO AVOID INCLUDING ENTIRE FILE */
+/* There are slight changes to spacing, margins, etc. -- not an exact duplicate! */
+
+.spinner {
+	width: 350px;
+	min-height: 120px;
+	border: 2px solid #878787; /* dark gray */
+	border-radius: 16px;
+	box-shadow: 4px 3px 4px 1px #969696;
+	margin: 10px auto;
+	display: none;
+	text-align: center;
+	user-select: none;
+    background-color: white;
+}
+
+.header {
+	margin: 15px 0 0 0;
+	font-family: monospace;
+	color: black;
+	padding: 0;
+	font-size: 18px;
+	text-align: center;
+}
+
+.blocks { 
+	display: none; 
+	margin: 30px 0 30px 0;
+}
+
+.gears { 
+	display: none; 
+	margin-top: 10px;
+}
+
+.gears img { 
+	margin-top: 2px;
+}
+
+.message {
+	border: 0px dashed black;
+	margin: 5px 0 15px 0;
+	padding: 0;
+	font-family: monospace;
+}
+
+/* Spinner Styling -- DUPLICATED FROM SAE.CSS TO AVOID INCLUDING THE ENTIRE FILE */

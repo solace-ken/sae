@@ -1,0 +1,14 @@
+{
+	"deftarg": "main",
+	"green": {
+		"block1": "greenlight",
+		"dot": "redcircle"
+	},
+	"red": {
+		"block1": "redlight",
+		"dot": "greencircle"
+	},
+	"more": "morecontent",
+	"info": "moreinfo",
+	"home": "defaultcontent"
+}

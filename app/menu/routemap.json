@@ -1,0 +1,14 @@
+{
+	"available":"available_apps",
+	"deftarg":"viewer",
+	"directory":"page_directory",
+	"education":"page_education",
+	"installed":"installed_apps",
+	"home":"page_solhome",
+	"library":"page_library",
+	"network":"page_network",
+	"notfound":"not_found",	
+	"onlinestatus":"page_status",
+	"solset":"page_settings",
+	"solacemenu":"solace_menu"
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>App 2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="app2.css"/>
+	<script>
+	// make sure the user really wants to exit
+	function confirmClose() {
+		if (confirm("Are you sure you want to exit?") === true) {
+		  appHandBack('/app/app2');
+		} 
+		else { return false; }	
+	}	
+	</script>
+</head>
+
+<body>
+
+<div id="ui">
+	<div id="topbar">
+		<div id="navgrp">
+			<a href="javascript:void(0)" id="reset" onclick="route(this)" title="Reset All Templates">Reset All Templates</a> 
+			<a href="javascript:void(0)" id="link1" onclick="route(this)" title="Load One Template">Load One Template</a> 
+			<a href="javascript:void(0)" id="link2" onclick="route(this)" title="Load Two Templates">Load Two Templates</a>
+			<a href="javascript:void(0)" id="link3" onclick="route(this)" title="Load Three Templates">Load Three Templates</a>
+		</div>
+		<button id="closebtn" onclick="confirmClose()" title="Close"></button>
+	</div>
+	<div id="mainview">
+		<div id="left">
+			<div id="boxa" title="Box A"></div>
+			<div id="boxb" title="Box B"></div>
+			<div id="boxc" title="Box C"></div>
+		</div>
+		<div id="right"></div>
+	</div>
+</div>
+
+<!-- LOADING MULTIPLE TEMPLATES -->
+
+<template id="templateA">
+	<div class="gold">
+		<img src="avatar.svg" height="80%"/>
+	</div>
+</template>
+
+<template id="templateB">
+	<div class="purple">
+		<img src="gearhead.svg" height="80%"/>
+	</div>	
+</template>
+
+<template id="templateC">
+	<div class="green">
+		<img src="bonsai.svg" width="80"/>
+	</div>
+</template>
+
+<template id="new_content">
+	<div class="box tan">
+		<h1>One Button Loads Multiple Templates</h1>
+		<p>Clicking on the button loads multiple templates. The button or link can have a one-to-one mapping (one template to one link). Or, you can do a one-to-many mapping and have one link or button trigger loading of multiple templates.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	</div>		
+</template>
+
+<!-- LOAD SINGLE TEMPLATE -->
+
+<template id="singletpl">
+	<div class="box tan">
+		<h1>Single Template Page Load</h1>
+		<p>Clicking on the "Load One Template" link loads one page. The button or link can have a one-to-one mapping (one template to one link). Or, you can do a one-to-many mapping and have one link or button trigger loading of multiple templates.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	</div>	
+</template>
+
+<!-- LOAD TWO TEMPLATES -->
+
+<template id="doubletpl">
+	<div class="box tan">
+		<h1>One Link Loads Two Templates</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	</div>
+</template>
+
+<template id="bonsai">
+	<br><img src="bonsai.svg" title="Bonsai!" width="80"/>
+	<ul style="margin:0;padding:0;">
+		<li>Foo</li>
+		<li>Bar</li>
+	</ul>
+</template>
+
+<!-- LOAD THREE TEMPLATES -->
+
+<template id="three_content">
+	<div class="box tan">
+		<h1>One Link Loads Three Templates</h1>
+		<p>Clicking on the button loads three templates. The button or link can have a one-to-one mapping (one template to one link). Or, you can do a one-to-many mapping and have one link or button trigger loading of multiple templates.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	</div>		
+</template>
+
+<!-- DEFAULT TEMPLATES: -->
+
+<template id="default_content">
+	<div class="box tan">
+		<h1>Default Heading</h1>
+		<p>Clicking the button should change 4 panes: A, B, C, and Main Content Area</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac elementum mi. Fusce lacinia cursus lacus, in ullamcorper odio. Pellentesque dictum rutrum libero eu gravida. Etiam at malesuada nibh, eget pharetra orci. Vestibulum eu vehicula dui. Sed efficitur magna nec libero aliquam, ut condimentum neque dignissim. Cras id tortor et lectus viverra ultrices. Duis non gravida eros, eu vehicula nisi. Donec in lectus at dui vestibulum sagittis.</p>
+	</div>
+</template>
+
+<template id="default_boxa">
+A
+</template>
+
+<template id="default_boxb">
+B<br>
+<button id="button1" onclick="route(this)" title="Click To Load Multiple Templates" class="clickme">Click Me</button>
+</template>
+
+<template id="default_boxc">
+C
+</template>
+
+<script src="/lib/js/logger.js"></script>
+<script src="/lib/js/functions.js"></script>
+<script src="/lib/js/storage.js"></script>
+<script src="/lib/js/router.js"></script>
+<script src="/lib/js/solace.js"></script>
+<script>
+// load default templates:
+document.getElementById('boxa').innerHTML = loadTemplate('default_boxa');
+document.getElementById('boxb').innerHTML = loadTemplate('default_boxb');
+document.getElementById('boxc').innerHTML = loadTemplate('default_boxc');
+document.getElementById('right').innerHTML = loadTemplate('default_content');
+// start the router
+startRouter();
+</script>
+
+</body>
+</html>
