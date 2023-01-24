@@ -1,0 +1,9 @@
+{
+	"tpl": "error",
+	"width": "",
+	"height": "",
+    "icon": "",
+	"title": "Test Error!",
+    "cause": "You did something to trigger this error",
+    "solution": "If you don't want to see this error, stop doing whatever you did."
+}

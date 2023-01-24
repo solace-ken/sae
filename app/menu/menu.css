@@ -17,7 +17,6 @@
   --darkgray: #878787;
 }
 
-/* TODO: investigate if 'html' is valid */
 body {
 	background-color: white;
 	color: black;
@@ -25,6 +24,7 @@ body {
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
 }
 
 h1 { font-size: 24px; }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>SOLACE</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: monospace;
+			text-align: center;
+			background-color: #e2e2e2; /* light gray */
+		}
+		h1 {
+			margin-top: 50px; 
+			font-size: 48px; 
+			user-select: none;
+			/* creates an outlined look */ 
+			-webkit-text-fill-color: transparent;
+    		-webkit-text-stroke: 1px #b6b6b6; /* darker silver */
+
+		}
+		.wrapper {
+			width: 50vw;
+			margin: 25px auto;
+		}
+		.gearimg {
+			width: 25vw;
+			margin-top: 2px;
+			opacity: 0.4;
+			user-select: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- DEV USE: figure out a way to target this element from outside the iframe -->
+	<h1 id="iframemsg">Blank Iframe</h1>
+
+	<div class="wrapper">
+		<img src="/sae/lib/img/gear-silver.svg" class="gearimg" title="This Page Is Intentionally Blank">
+	</div>
+	
+</body>
+</html>

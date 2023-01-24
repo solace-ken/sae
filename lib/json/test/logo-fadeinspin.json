@@ -1,0 +1,9 @@
+{
+	"tpl": "logo",
+    "sfx": "fadeinspin",
+	"width": "250",
+	"height": "250",
+    "image": "/sae/lib/img/solace-logo-gold.svg",
+    "link": "https://solace.network",
+    "title": "Click to go to SOLACE Home"
+}

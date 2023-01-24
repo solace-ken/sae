@@ -3,15 +3,21 @@
 <head>
 	<title>SOLACE API</title>
 	<meta charset="UTF-8">
-	<link rel="icon" type="image/x-icon" href="../lib/img/solace-logo.ico">
-	<link rel="stylesheet" href="../lib/css/api.css">
+	<link rel="icon" type="image/x-icon" href="/sae/lib/img/solace-logo.ico">
+	<link rel="stylesheet" href="/sae/lib/css/sae.css">
+	<link rel="stylesheet" href="/sae/lib/css/api.css">
 </head>
 
 <body>
 
 <h2>SOLACE API</h2>
 
-<p class="devuse">DEV USE ONLY</p>
+<!-- <a href="#output">Output</a> -->
+
+<p class="devuse">DEV USE ONLY!</p>
+
+<!-- TODO: figure out how to scroll or jump to this anchor without reloading the page -->
+<a name="output"></a>
 
 <h4>Output:</h4>
 
@@ -19,26 +25,51 @@
 <!-- TODO: replace this with input textarea so the output becomes editable / copyable by the user -->
 <div id="display" class="display"></div>
 
+<!-- buttons -->
 <p>
-	<button class="menu" onClick="location.href=('/')">SOLACE Menu</button>
-	<button class="menu" onClick="viewElement()">View Element</button>
+	<button class="menu" onClick="location.href=('/sae/')">SOLACE Menu</button>
+	<button class="menu" id="viewelement">View Element</button>
 </p>
 
-<br><br>
+	<!-- code for red x close window -->
+	<!-- <div id="closebtn" class="closebtn" onclick="location.href=('/sae/api/')">
+		<img id="redx" class="redx" src="/sae/lib/img/x-red.svg" width="50" height="50" title="Close">
+		<img id="grayx" class="blackx" src="/sae/lib/img/x.svg" width="50" height="50" title="Close">
+	</div> -->
 
-<!-- Spinner: duplicated from /index.html -->
+<!-- SOLACE Logo -->
+<template id="logotpl">	
+	<div id="logo" class="logo">
+		<a href="/sae/"><img src="/sae/lib/img/solace-logo.svg" height="250" title="SOLACE"></a>
+	</div>	
+</template>
+	
+<!-- Spinner -->
 <template id="spintpl">
 	<div id="spinner" class="spinner">
 		<h3 id="header" class="header"></h3>
-		<div id="gears" class="gears"><img src="../lib/img/gears.gif" height="90" width="110" title="Loading..."></div>
-		<div id="blocks" class="blocks"><img src="../lib/img/square-loader.gif" width="160" height="24" title="Loading..."></div>
+		<div id="gears" class="gears"><img src="/sae/lib/img/gears.gif" height="90" width="110" title="Loading..."></div>
+		<div id="blocks" class="blocks"><img src="/sae/lib/img/square-loader.gif" width="160" height="24" title="Loading..."></div>
 		<p id="message" class="message"></p>
 	</div>
 </template>
+	
+<!-- Error -->
+<template id="errtpl">
+	<div id="errmsg" class="errmsg">
+		<h3 id="title" class="title">Error!</h3>
+		<p id="errimg"><img src="/sae/lib/img/error.svg" width="100" title="Error!"></p>
+		<p id="cause" class="cause"></p>
+		<p id="solution" class="solution"></p>
+	</div>
+</template>
+	
+<!-- Iframe -->
+<template id="frametpl">
+		<iframe id="appviewer" name="appviewer" title="Current Application" src="/sae/lib/blank.html"></iframe>
+</template>
 
-<script src="../lib/js/functions.js"></script>
-<script src="../lib/js/logger.js"></script>
-<script src="../lib/js/api.js"></script>
+<script src="/sae/lib/js/modules/api.js" type="module"></script>
 
 </body>
 </html>

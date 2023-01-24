@@ -2,6 +2,7 @@ body {
     background-color: white;
     color: black;
     font-size: 16px;
+    overflow: auto;
 }
 /* user-selected text styling */
 ::selection {
@@ -23,17 +24,19 @@ button:hover {
 }
 .display {
     background-color: #EEE;
-    height: 50vh;
+    min-height: 40vh;
+    height: 70vh;
     border: 3px dashed black;	
-    padding: 25px;
+    padding: 20px;
 }
 .devuse {
-    width: 110px;
+    width: 115px;
     font-family: monospace;
     font-weight: bold;
     color: red;
     border: 1px dashed red;
     padding: 3px;
+    text-align: center;
 }
 h4 {
     font-family: monospace;
@@ -42,55 +45,35 @@ h4 {
 }
 .optxt {
     font-family: monospace;
-    font-color: black;
+    color: black;
     font-size: 24px;
     font-weight: 700;
 }
-
-/* Spinner Styling -- DUPLICATED FROM SAE.CSS TO AVOID INCLUDING ENTIRE FILE */
-/* There are slight changes to spacing, margins, etc. -- not an exact duplicate! */
-
-.spinner {
-	width: 350px;
-	min-height: 120px;
-	border: 2px solid #878787; /* dark gray */
-	border-radius: 16px;
-	box-shadow: 4px 3px 4px 1px #969696;
-	margin: 10px auto;
-	display: none;
-	text-align: center;
-	user-select: none;
-    background-color: white;
+/* Close button for 'View Element' */
+.closebtn {
+    height: 50px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: right;
+    position: relative;
+    cursor: pointer;
 }
-
-.header {
-	margin: 15px 0 0 0;
-	font-family: monospace;
-	color: black;
-	padding: 0;
-	font-size: 18px;
-	text-align: center;
+/* black X */
+.blackx {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 800;
+    opacity: 1;   
 }
-
-.blocks { 
-	display: none; 
-	margin: 30px 0 30px 0;
+/* css rollover - hide black x to reveal red x underneath */
+.blackx:hover {
+    opacity: 0;
 }
-
-.gears { 
-	display: none; 
-	margin-top: 10px;
+/* red x */
+.redx {
+    position: absolute;
+    top: 0;
+    right: 0; 
+    opacity: 1; 
 }
-
-.gears img { 
-	margin-top: 2px;
-}
-
-.message {
-	border: 0px dashed black;
-	margin: 5px 0 15px 0;
-	padding: 0;
-	font-family: monospace;
-}
-
-/* Spinner Styling -- DUPLICATED FROM SAE.CSS TO AVOID INCLUDING THE ENTIRE FILE */

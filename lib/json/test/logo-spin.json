@@ -1,0 +1,9 @@
+{
+	"tpl": "logo",
+    "sfx": "spin",
+	"width": "250",
+	"height": "250",
+    "image": "/lib/img/solace-logo.svg",
+    "link": "https://solace.network",
+    "title": "SOLACE Network"
+}

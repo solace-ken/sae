@@ -4,23 +4,23 @@
 	<title>SOLACE</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="lib/img/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="lib/css/sae.css"/>
+	<link rel="icon" type="image/x-icon" href="/sae/lib/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/sae/lib/css/sae.css"/>
 </head>
 
 <body>
 
-<!-- Main Target Div -->
+<!-- SAE Main Target Div -->
 <main id="ui"></main>
 
 <!-- No Javascript -->
 <noscript>
 <div class="noscript">
 	<h2 title="Error Loading App">Error Loading App</h2>
-	<p><img src="lib/img/error.svg" width="100" title="Error Loading App" alt="Error Loading App"></p>
+	<p><img src="/sae/lib/img/error.svg" width="100" title="Error Loading App" alt="Error Loading App"></p>
 	<p>You must have Javascript enabled to use this app.</p>
 	<p>Please check your settings and reload.</p>
-	<p><a href="/">Try Again</a></p>
+	<p><a href="/sae/">Try Again</a></p>
 </div>
 </noscript>
 
@@ -29,7 +29,7 @@
 <!-- SOLACE Logo -->
 <template id="logotpl">
 <div id="logo" class="logo">
-	<a href="/" target="_self" id="limage" class="limage"><img src="lib/img/solace-logo.svg" height="250" title="SOLACE"></a>
+	<a href="/" target="_top" id="limage" class="limage"><img src="/sae/lib/img/solace-logo.svg" height="250" title="SOLACE"></a>
 </div>	
 </template>
 
@@ -37,8 +37,8 @@
 <template id="spintpl">
 <div id="spinner" class="spinner">
 	<h3 id="header" class="header"></h3>
-	<div id="gears" class="gears"><img src="lib/img/gears.gif" height="90" width="110" title="Loading..."></div>
-	<div id="blocks" class="blocks"><img src="lib/img/square-loader.gif" width="160" height="24" title="Loading..."></div>
+	<div id="gears" class="gears"><img src="/sae/lib/img/gears.gif" height="90" width="110" title="Loading..."></div>
+	<div id="blocks" class="blocks"><img src="/sae/lib/img/square-loader.gif" width="160" height="24" title="Loading..."></div>
 	<p id="message" class="message"></p>
 </div>
 </template>
@@ -47,7 +47,7 @@
 <template id="errtpl">
 <div id="errmsg" class="errmsg">
 	<h3 id="title" class="title">Error!</h3>
-	<p id="errimg"><img src="lib/img/error.svg" width="100" title="Error!"></p>
+	<p id="errimg"><img src="/sae/lib/img/error.svg" width="100" title="Error!"></p>
 	<p id="cause" class="cause"></p>
 	<p id="solution" class="solution"></p>
 </div>
@@ -55,22 +55,10 @@
 
 <!-- Iframe -->
 <template id="frametpl">
-	<iframe id="appframe" scrolling="no" src="https://garden.solace.network"></iframe>
+	<iframe id="appviewer" name="appviewer" title="Current Application" src="/sae/lib/blank.html"></iframe>
 </template>
 
-<!-- Javascripts for SAE (order is important!) -->
-<!-- functions.js must be loaded first -->
-<!-- logger.js should be loaded second -->
-<!-- sae.js should be loaded third -->
-<!-- api.js is loaded last so it has access to other scripts -->
-<script src="lib/js/functions.js"></script>
-<script src="lib/js/logger.js"></script>
-<script src="lib/js/sae.js"></script>
-<script src="lib/js/api.js"></script>
-
-<!-- router: used by SOLACE apps for navigation -->
-<!-- does nothing on the main index page -->
-<!-- <script src="/lib/js/router.js"></script> -->
+<script src="/sae/lib/js/main.js" type="module"></script>
 
 <br><br>
 

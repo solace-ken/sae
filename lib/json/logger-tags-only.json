@@ -1,0 +1,114 @@
+{
+	"action": {
+		"label": "Action Request",
+		"bgcol": "#D50000",
+		"txtcol": "white",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"api": {
+		"label": "API",
+		"bgcol": "#050748",
+		"txtcol": "#F8F4E3",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"dev": {
+		"label": "Dev Use",
+		"bgcol": "black",
+		"txtcol": "white",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""
+	},
+	"engine": {
+		"label": "App Engine",
+		"bgcol": "#28AFB0",
+		"txtcol": "black",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"gui": {
+		"label": "GUI",
+		"bgcol": "#AA78A6",
+		"txtcol": "#070707",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"loader": {
+		"label": "Loader",
+		"bgcol": "#F0B800",
+		"txtcol": "black",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"logger": {
+		"label": "Logger",
+		"bgcol": "#6B0F1A",
+		"txtcol": "white",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"menu": {
+		"label": "SOLACE Menu",
+		"bgcol": "#502F4C",
+		"txtcol": "#FFDDD2",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"router": {
+		"label": "Router",
+		"bgcol": "#4C1C00",
+		"txtcol": "white",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"session": {
+		"label": "Session",
+		"bgcol": "#0D2E83",
+		"txtcol": "white",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"solace": {
+		"label": "SOLACE",
+		"bgcol": "#0634AA",
+		"txtcol": "white",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"storage": {
+		"label": "Storage",
+		"bgcol": "#EE7674",
+		"txtcol": "black",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"ui": {
+		"label": "UI",
+		"bgcol": "#AA78A6",
+		"txtcol": "#070707",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	},
+	"view": {
+		"label": "Viewport",
+		"bgcol": "#4E4E0C",
+		"txtcol": "white",
+		"msgcolor": "", 
+		"bold": "", 
+		"logmsg": ""		
+	}
+}

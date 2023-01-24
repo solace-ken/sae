@@ -4,13 +4,13 @@
 	<title>SOLACE Menu</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="../../lib/img/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="menu.css"/>
+	<link rel="icon" type="image/x-icon" href="/sae/lib/img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/sae/app/menu/menu.css"/>
 </head>
 
 <body>
 
-<!-- target div (can be any ID name except 'ui')-->
+<!-- target div -->
 <div id="container">
 	<main id="viewer"></main>
 	<footer id="footer"></footer>
@@ -19,7 +19,7 @@
 <!-- No Javascript Error -->
 <noscript class="noscript">
 	<h2 title="Error Loading App">Error Loading App</h2>
-	<p><img src="../../lib/img/error.svg" width="100" title="Error Loading App" alt="Error Loading App"></p>
+	<p><img src="/sae/lib/img/error.svg" width="100" title="Error Loading App" alt="Error Loading App"></p>
 	<p>You must have Javascript enabled to use this app.</p>
 	<p>Please check your settings and reload.</p>
 	<p><a href="/">Try Again</a></p>
@@ -31,37 +31,37 @@
 	<div id="menu">
 		<button type="button" id="directory" onclick="loadURL('directory.solace.network');" class="menubtn red" title="Directory">
 			<div class="fbcont">
-				<div class="largeicon"><img src="../../lib/img/directory.svg" title="Directory"></div>
+				<div class="largeicon"><img src="/sae/lib/img/directory.svg" title="Directory"></div>
 				<div class="label"><label for="directory">Directory</label></div>
 			</div>
 		</button>	
 		<button type="button" id="education" onclick="route(this)" class="menubtn purple" title="Education">
 			<div class="fbcont">
-				<div class="largeicon"><img src="../../lib/img/education.svg" alt="Education"></div>
+				<div class="largeicon"><img src="/sae/lib/img/education.svg" alt="Education"></div>
 				<div class="label"><label for="education">Education</label></div>
 			</div>
 		</button>
 		<button type="button" id="garden" onclick="loadURL('garden.solace.network');" class="menubtn green" title="Garden">
 			<div class="fbcont">
-				<div class="largeicon"><img src="../../lib/img/garden.svg" title="Click To Load Garden"></div>
+				<div class="largeicon"><img src="/sae/lib/img/garden.svg" title="Click To Load Garden"></div>
 				<div class="label"><label for="garden">Garden</label></div>
 			</div>
 		</button>
 		<button type="button" id="home" onclick="route(this)" class="menubtn orange" title="Home">
 			<div class="fbcont">
-				<div class="largeicon"><img src="../../lib/img/home.svg" title="Home"></div> 
+				<div class="largeicon"><img src="/sae/lib/img/home.svg" title="Home"></div> 
 				<div class="label"><label for="home">Home</label></div>
 			</div>	
 		</button>
 		<button type="button" id="library" onclick="route(this)" class="menubtn blue" title="Library">
 			<div class="fbcont">
-				<div class="largeicon"><img src="../../lib/img/library.svg" alt="Library"></div>
+				<div class="largeicon"><img src="/sae/lib/img/library.svg" alt="Library"></div>
 				<div class="label"><label for="library">Library</label></div>
 			</div>
 		</button>
 		<button type="button" id="network" onclick="route(this)" class="menubtn silver" title="Network">
 			<div class="fbcont">
-				<div class="largeicon"><img src="../../lib/img/network.svg" alt="Network"></div>
+				<div class="largeicon"><img src="/sae/lib/img/network.svg" alt="Network"></div>
 				<div class="label"><label for="network">Network</label></div>
 			</div>
 		</button>
@@ -79,8 +79,8 @@
 	</div>
 	<div id="staticons" role="status">
 		<div class="shim"></div>
-		<div class="icons"><a id="onlinestatus" href="javascript:void(0)" onclick="route(this); clearHashTags();  location.hash='status';"><img src="../../lib/img/circle-red-filled.svg" height="25px" width="25px" id="dot" title="Status: OFFLINE"></a></div>
-		<div class="icons"><a id="solset" href="javascript:void(0)" onclick="route(this); clearHashTags(); location.hash='settings';"><img src="../../lib/img/cog.svg" id="cog" title="Quick Settings"/></a></div>
+		<div class="icons"><a id="onlinestatus" href="javascript:void(0)" onclick="route(this); clearHashTags();  location.hash='status';"><img src="/sae/lib/img/circle-red-filled.svg" height="25px" width="25px" id="dot" title="Status: OFFLINE"></a></div>
+		<div class="icons"><a id="solset" href="javascript:void(0)" onclick="route(this); clearHashTags(); location.hash='settings';"><img src="/sae/lib/img/cog.svg" id="cog" title="Quick Settings"/></a></div>
 		<div class="shim"></div>	
 	</div>	
 </template>
@@ -90,12 +90,11 @@
 		<h1>Installed Apps</h1>
 		<p>Sample Applications</p>
 		<ul>
-			<li><a href="javascript:void(0)" onclick="appHandOff('/app/dcb/')" class="installed">dcb</a> - dog &vert; cat &vert; bird</li>			
-			<li><a href="javascript:void(0)" onclick="appHandOff('/app/sample1/')" class="installed">sample app 1</a> - test app</li>
-			<li><a href="javascript:void(0)" onclick="appHandOff('/app/sample2/')" class="installed">sample app 2</a> - test app</li>
-			<li><a href="javascript:void(0)" onclick="appHandOff('/app/sample3/')" class="installed">sample app 3</a> - test app</li>
-			<li><a href="javascript:void(0)" onclick="appHandOff('/app/sample4/')" class="installed">sample app 4</a> - test app</li>
-
+			<li><a href="javascript:void(0)" onclick="appHandOff('/sae/app/demo/dcb/')" class="installed">dcb</a> - dog &vert; cat &vert; bird</li>			
+			<li><a href="javascript:void(0)" onclick="appHandOff('/sae/app/demo/sample1/')" class="installed">sample app 1</a> - test app</li>
+			<li><a href="javascript:void(0)" onclick="appHandOff('/sae/app/demo/sample2/')" class="installed">sample app 2</a> - test app</li>
+			<li><a href="javascript:void(0)" onclick="appHandOff('/sae/app/demo/sample3/')" class="installed">sample app 3</a> - test app</li>
+			<li><a href="javascript:void(0)" onclick="appHandOff('/sae/app/demo/sample4/')" class="installed">sample app 4</a> - test app</li>
 		</ul>
 	</div>
 </template>
@@ -114,7 +113,6 @@
 <template id="page_directory">
 	<h1>SOLACE Directory</h1>
 	<p>This Module Has Not Been Created Yet</p>
-	<p>SOLACE Directory is a marketplace for trading. If you have a business, make a product, or offer a service you can list it here. The directory is searchable by name, type, location, and keyword. When SOLACE is online, it uses a central database. When offline, it remembers your favorites and, if they are part of your network, it will display them. Otherwise it shows nearby SOLACE Network products or services (i.e. those within your immediate wireless or bluetooth network). If a group of people are running the app on wifi or are networked together, a list of local goods and services will appear. When the app returns to ONLINE status, the full (unabridged) central directory will be used instead.</p>
 </template>
 
 <template id="page_education">
@@ -135,9 +133,9 @@
 <template id="page_network">
 	<h1>SOLACE Network</h1>
 	<p id="tt">This Module Has Not Been Created Yet</p>
-	<!-- DEV USE: -->
-	<img src="../../lib/img/1x1.png" onload="testFun()">
-   
+	<!-- DEV USE: 
+	<img src="/sae/lib/img/1x1.png" onload="testFun()">
+	-->
 </template>
 
 <template id="not_found">
@@ -192,14 +190,14 @@
 	</p>
 	<br>
 	<!-- show app data (loads iFrame which shows data)-->
-	<iframe src="appdata.html" style="width:100%;height:300px;"></iframe>
+	<iframe src="/sae/app/menu/appdata.html" style="width:100%;height:300px;"></iframe>
 </template>
 
 <template id="page_status">
 	<div style="text-align: center";>
 		<h1>Network Status</h1>
 		<div id="netstatus"></div>
-		<img src="../../lib/img/1x1.png" onLoad="showNetStatus()">
+		<img src="/sae/lib/img/1x1.png" onLoad="showNetStatus()">
 	</div>	
 </template>
 
@@ -217,17 +215,20 @@ api.js should be loaded next to last
 router.js should be loaded last
 -------------------------------------------------------- 
 -->
-<script src="../../lib/js/functions.js"></script>
-<script src="../../lib/js/logger.js"></script>
 
-<!-- TODO: fix sae.js to prevent error (missing 'ui' element)
-<script src="/lib/js/sae.js"></script>
-<script src="/lib/js/api.js"></script> 
+<!-- basic functionality enabled with custom logging and router access -->
+<script src="/sae/lib/js/functions.js"></script>
+<script src="/sae/lib/js/logger.js"></script>
+<script src="/sae/lib/js/router.js"></script>
+
+<!-- SAE and API are not loaded yet.... need to stop verbose messaging
+<script src="lib/js/sae.js"></script>
+<script src="lib/js/api.js"></script> 
 -->
-<script src="../../lib/js/router.js"></script>
 
 <!-- Javascript for local app (SOLACE Menu)-->
-<script src="menu.js"></script>
+<!-- make sure local app can tap into "first run" flag too and show boot message only one time -->
+<script src="/sae/app/menu/menu.js"></script>
 
 </body>
 </html>

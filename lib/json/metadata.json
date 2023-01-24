@@ -1,0 +1,14 @@
+{
+  "name": "SOLACE App Engine",
+  "version": "1.7.0",
+  "subversion": "alpha",
+  "releasedate": "2023-01-19T23:09:49.616Z", 
+  "author": "SOLACE Network",
+  "logo": "/sae/lib/img/solace-logo.svg",
+  "icon": "/sae/lib/img/solace-logo.ico",
+  "site": "https://solacenetwork.org",
+  "support": "https://support.solace.network",  
+  "api": "https://api.solace.network",
+  "brand": "App Engine by SOLACE Network",
+  "key": "77b5aeab9a52160d5faf8858e50ee16bd12444d0ce545706a84accc46ebdf371"
+}
