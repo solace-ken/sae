@@ -21,7 +21,10 @@ const dogs_navbtns = `
 	<button id="dogs_image2" class="navbtn" onclick="showImg(this)">Picture 2</button>
 	<button id="dogs_image3" class="navbtn" onclick="showImg(this)">Picture 3</button>
 	<p id="ss"></p>
+	<!-- 
+	dev use: from older code 
 	<img src="/lib/img/1x1.png" onload="showScreenSize()">
+	-->
 `;
 
 const dogs_content = `
@@ -49,7 +52,7 @@ const cats_navbtns = `
 	<button id="cats_image2" class="navbtn" onclick="showImg(this)">Picture 2</button>
 	<button id="cats_image3" class="navbtn" onclick="showImg(this)">Picture 3</button>
 	<p id="ss"></p>
-	<img src="/lib/img/1x1.png" onload="showScreenSize()">
+	<!-- <img src="/lib/img/1x1.png" onload="showScreenSize()"> -->
 `;
 
 const cats_content = `
@@ -80,7 +83,7 @@ const birds_navbtns = `
 	<button id="birds_image2" class="navbtn" onclick="showImg(this)">Picture 2</button>
 	<button id="birds_image3" class="navbtn" onclick="showImg(this)">Picture 3</button>
 	<p id="ss"></p>
-	<img src="/lib/img/1x1.png" onload="showScreenSize()">
+	<!-- <img src="/lib/img/1x1.png" onload="showScreenSize()"> -->
 `;
 
 const birds_content = `

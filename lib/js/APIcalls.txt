@@ -1,0 +1,122 @@
+# API calls:
+
+1. Requesting Templates:
+
+Syntax: /?tpl = name
+
+Valid template names:
+
+* logo
+* spinner
+* error
+* iframe
+
+    a.) Requesting Logo Template: /?tpl=logo (shows a static logo)
+
+        Possible options: 
+
+        I. sfx - special effects which can be applied to the logo
+
+            Syntax: /?tpl=logo&sfx=effect
+
+            Possible special effects: 
+
+            a.) spin - Syntax: /?tpl=logo&sfx=spin
+            b.) fadeinspin - Syntax: /?tpl=logo&sfx=fadeinspin
+            c.) fadeoutspin - Syntax: /?tpl=logo&sfx=fadeoutspin
+            d.) spinforever - Syntax: /?tpl=logo&sfx=spinforever
+
+        You can also pass requests via JSON directly in the URL
+
+        /?json={"tpl":"logo","sfx":"fadeinspin"}
+
+        If you already have a JSON file on the server, you can pass a path to API request:
+
+        /?json=/sae/lib/json/test/logo-fadeinspin.json    
+
+    b.) Requesting Spinner Template: /?tpl=spinner
+
+        Possible options:
+
+        I. head - the spinner main heading
+
+        Syntax: /?tpl=spinner&head=A%20New%20Heading
+
+        II. img - the spinner image (animated GIF)
+
+        Possible options: gears, or blocks
+
+        If image isn't specified, the default is gears
+
+        Syntax: /?tpl=spinner&img=blocks (or gears)
+
+        III. msg - the spinner message
+
+        Syntax: /?tpl=spinner&msg=This%20is%20a%20new%20spinner%20message
+
+        Combine multiple options to create custom spinners:
+
+        /?tpl=spinner&head=A%20New%20Heading&img=blocks&msg=This%20is%20a%20new%20spinner%20message
+
+        You can also pass requests via JSON directly in the URL
+
+        /?json={"tpl":"spinner","head":"A%20New%20Heading","img":"gears","msg":"This%20is%20a%20new%20spinner%20message"}
+
+        If you already have a JSON file on the server, you can pass a path to API request:
+
+        /?json=/sae/lib/json/test/spinner-blocks.json
+        /?json=/sae/lib/json/test/spinner-gears.json
+
+    c.) Requesting Error Template: /?tpl=error
+
+        Possible options: 
+        
+        I. title - the error message title
+
+        Syntax: /?tpl=error&title=This%20Is%20The%20Error%20Title!
+        
+        II. cause - the cause of the error
+
+        Syntax: /?tpl=error&cause=This%20is%20what%20went%20wrong
+        
+        III. solution - possible solutions the user can try to fix the problem
+
+        Syntax: /?tpl=error&solution=These%20are%20the%20steps%20you%20can%20take%20to%20try%20to%20fix%20it
+
+        Combine multiple options to create custom error messages:
+        
+        /?tpl=error&title=This%20Is%20The%20Error%20Title!&cause=This%20is%20what%20went%20wrong&solution=These%20are%20the%20steps%20you%20can%20take%20to%20try%20to%20fix%20it
+
+        You can also pass requests via JSON directly in the URL
+
+        /?json={"tpl":"error","title":"This%20Is%20The%20Error%20Title!","cause":"This%20is%20what%20went%20wrong","solution":"These%20are%20the%20steps%20you%20can%20take%20to%20try%20to%20fix%20it"}
+
+        If you already have a JSON file on the server, you can pass a path to API request:
+
+        /?json=/sae/lib/json/test/error-sample.json
+    
+    d.) Reqesting iframe template: /?tpl=iframe
+
+        Possible options: 
+
+        I. src (source) - loads a URL in the iframe template
+
+        Syntax: /?tpl=iframe&src=/sae/app/demo/dcb/
+
+        If no source is given, a blank page will show in the iframe.
+
+        If external URLS are used, the site must allow loading inside of an iframe
+
+        Syntax: /?tpl=iframe&src=https://solacenetwork.org
+
+        Otherwise, you might get browser errors like this:
+
+        Refused to display 'https://www.google.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'.
+
+        External sites should also be secured with HTTPS
+
+        Otherwise, you might get browser errors about Mixed Content:
+
+        Mixed Content: The page at '/?tpl=iframe&src=http://solacenetwork.org' was loaded over HTTPS, but requested an insecure frame 'http://solacenetwork.org/'. This request has been blocked; the content must be served over HTTPS.
+
+        This can usually be set in the web server configuration files (e.g. .htaccess or Caddyfile)

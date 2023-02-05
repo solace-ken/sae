@@ -1,0 +1,18 @@
+// Set Target Div
+// TODO: turn target div into a storage variable
+//if (pageIsAPI()) {
+//  var dtype = document.getElementById('dtype');
+//}
+// If we aren't on the API page...
+//else {
+    // if 'dtype' div doesn't exist, created it to avoid errors
+    // element is added to bottom of the page and display
+    // value is set to 'none' so, it's hidden. 
+    //if (!dtype){
+      // const tdiv = document.createElement('div');
+      // tdiv.id = 'dtype';
+      // tdiv.style.display = 'none';
+      // document.body.appendChild(tdiv);
+      // var dtype = document.getElementById('dtype');
+   // }  
+//}

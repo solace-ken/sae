@@ -2,7 +2,7 @@
 	"tpl": "spinner",
 	"width": "800",
 	"height": "250",
-	"header": "Sample Spinner",
-    "image": "blocks",
-    "message": "Using 'blocks' animation"
+	"head": "Sample Spinner",
+    "img": "blocks",
+    "msg": "Using 'blocks' animation"
 }

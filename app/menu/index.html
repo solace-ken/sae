@@ -5,7 +5,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="/sae/lib/img/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="/sae/app/menu/menu.css"/>
+	<link rel="stylesheet" type="text/css" href="menu.css"/>
+	<!-- Router -->
+	<script src="/sae/lib/js/router.js"></script>
+	<!-- SOLACE Menu: UI Functions -->
+	<!-- TODO: figure out a beter way to deal with this -->
+	<script src="ui-functions.js"></script>
 </head>
 
 <body>
@@ -90,7 +95,8 @@
 		<h1>Installed Apps</h1>
 		<p>Sample Applications</p>
 		<ul>
-			<li><a href="javascript:void(0)" onclick="appHandOff('/sae/app/demo/dcb/')" class="installed">dcb</a> - dog &vert; cat &vert; bird</li>			
+			<li><a href="javascript:void(0)" onclick="top.location.href=('/sae/?tpl=iframe&src=/sae/app/demo/dcb/')" class="installed">dcb</a> - dog &vert; cat &vert; bird</li>
+			<!-- <li><a href="javascript:void(0)" onclick="appHandOff('/sae/app/demo/dcb/')" class="installed">dcb</a> - dog &vert; cat &vert; bird</li> -->
 			<li><a href="javascript:void(0)" onclick="appHandOff('/sae/app/demo/sample1/')" class="installed">sample app 1</a> - test app</li>
 			<li><a href="javascript:void(0)" onclick="appHandOff('/sae/app/demo/sample2/')" class="installed">sample app 2</a> - test app</li>
 			<li><a href="javascript:void(0)" onclick="appHandOff('/sae/app/demo/sample3/')" class="installed">sample app 3</a> - test app</li>
@@ -148,8 +154,12 @@
 	<p>
 	<table cellspacing="3" cellpadding="5" class="setptab">
 		<tr>
-			<td colspan="2">Toolbar Location: <span style="float:right;"><a href="#">Top</a> &vert; <a href="#">Bottom</a></span></td>
-		</tr>			
+			<td colspan="2">Toolbar Location: <span style="float:right;"><a href="#">Top</a> &vert; <b>Bottom</b></span></td>
+		</tr>	
+		<tr>
+			<td>Current Device Name</td>
+			<td><input type="text" id="devname" name="devname" size="10" maxlength="25"></td>
+		</tr>				
 		<tr>
 			<td>Default to SOLACE Menu instead of Last-Used App</td>
 			<td width="50">
@@ -201,34 +211,11 @@
 	</div>	
 </template>
 
-<!-- 
-----------------------------------------------------------
-Javascripts for SAE (load order is important!) 
----------------------------------------------------------- 	
+<!-- SAE -->
+<script src="/sae/lib/js/sae.js" type="module"></script>
 
-TODO: use type module for 'sae.js' and import other functions
-
-functions.js must be loaded first
-logger.js should be loaded second
-sae.js should be loaded third
-api.js should be loaded next to last
-router.js should be loaded last
--------------------------------------------------------- 
--->
-
-<!-- basic functionality enabled with custom logging and router access -->
-<script src="/sae/lib/js/functions.js"></script>
-<script src="/sae/lib/js/logger.js"></script>
-<script src="/sae/lib/js/router.js"></script>
-
-<!-- SAE and API are not loaded yet.... need to stop verbose messaging
-<script src="lib/js/sae.js"></script>
-<script src="lib/js/api.js"></script> 
--->
-
-<!-- Javascript for local app (SOLACE Menu)-->
-<!-- make sure local app can tap into "first run" flag too and show boot message only one time -->
-<script src="/sae/app/menu/menu.js"></script>
-
+<!-- SOLACE Menu App -->
+<script src="menu.js" type="module"></script>
+ 
 </body>
 </html>

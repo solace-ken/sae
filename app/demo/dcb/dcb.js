@@ -66,7 +66,8 @@ function showDogs() {
 // make sure the user really wants to exit
 function confirmClose() {
 	if (confirm("Are you sure you want to exit?") == true) {	
-	  appHandBack('/app/dcb');
+	  //appHandBack('/app/dcb');
+	  location.href = ('/sae/app/menu');
 	} 
 	else { return false; }	
 }

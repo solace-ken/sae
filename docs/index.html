@@ -65,6 +65,7 @@
         <br><br>
 
         <a name="sae"></a>
+    
         <h2>SOLACE App Engine</h2>
 
         <p>SOLACE App Engine (SAE) is a system for storing and running multiple stand-alone Javascript applications all under one roof. Each of the apps that SOLACE App Engine can "run" is stored inside of the <b>app</b> directory in a separate folder. All of the apps are <b>stand-alone</b>. They can run by themselves, and function indepent from SOLACE App Engine. If you go directly to <b>/sae/app/name/</b>, you should be able to run the application by itself. Everything the Javascript app needs should be self-contained within the directory (scripts, stylesheets, templates, HTML files, images, ...everything!) Each of the applications is separate and unique.</p>
@@ -78,6 +79,7 @@
         <p>Developers can write their apps to use either the SAE libraries (under "<a href="#vend">/lib/vendor/")</a> or a stand-alone copy of the library inside the folder where the app is running. You can add as many sub-folders and libraries as you need to your app as long as the total size of the folder stays below 100 MB (zipped). You can even write your code to toggle between SAE libaries and stand-alone dev libraries which are self-contained in the app, or you can make it a user preference. It's up to you, the developer.</p>
 
         <a name="api"></a>
+
         <h2>API</h2>
         <p>The API can be viewed at: /api/</p>
         <p>You can control the SOLACE App Engine with URL commands</p>
@@ -91,10 +93,12 @@
         </p>
 
         <a name="log"></a>
+
         <h2>Logger</h2>
         <p>The logger function provides custom logging for SAE. This allows you to use custom colors and labels.</p>
 
         <a name="mod"></a>
+
         <h2>Modules</h2>
         <p>Eventually modules will be: 
             <ul>
@@ -109,12 +113,14 @@
         </p>
 
         <a name="ui"></a>
+
         <h2>User Interface (UI)</h2>
         <p><h4>Reserved Words:</h4></p>
         <p style="font-family: monospace;"><b>&lt;div id="ui"&gt;&lt;/div&gt;</b></p>
         <p>The main UI for SAE has a div with an id called 'ui'. This is the 'target div' for the entire SAE application. This id name ('ui') is a reserved SOLACE word which should be exclusive to the SOLACE App Engine. If multiple Javascript apps are all using the same IDs, it could result in Javascript errors. To avoid this problem, try using alternative div id names in your apps (e.g. 'wrapper', 'container', 'box', 'view', etc.). It would prevent any future confusion if you just named your own div something different. In the event of a conflict, the code will give preference to SAE functions first. This could result in Javascript errors in your 3rd party app running inside an iframe in SAE.</p>
 
         <a name="vend"></a>
+
         <h2>Extra Resources (vendor)</h2>
         <p>The <b>/lib/vendor/</b> directory contains copies of 3rd party scripts which come with their own license. They are provided here for your convenience. But, always feel free to grab the latest versions directly from the source and use your own code libraries. We try to keep up with version changes but, sometimes we fall behind. If you notice a 3rd party library which needs to be updated, please let us know.</p>
         <p><h4>3rd Party Vendor Libraries:</h4></p>
@@ -132,6 +138,7 @@
         </p>
 
         <a name="gpl"></a>
+
         <h2>License</h2>
         <p>GPLv3</p>
         <p>View a copy of the GPL here: <a href="/sae/LICENSE" target="_blank">/sae/LICENSE</a><a href="/sae/LICENSE" target="_blank"><img class="extlink" src="/sae/lib/img/external-link.svg" width="20" height="20" title="Open in a new tab/window"></a></p>
@@ -192,9 +199,6 @@
 // Data in URLs should be passed in URI-encoded, valid JSON format
 
 -->
-
-
-
     </div>
 
 <br><br>

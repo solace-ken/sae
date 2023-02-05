@@ -27,7 +27,7 @@ html, body {
 	height: calc(100% - 3px);
 	width: calc(100% - 3px);
 	margin: 0;
-	padding: 2px;
+	padding: 1px;
 	overflow: hidden; 
 }
 
@@ -61,10 +61,10 @@ iframe {
 /* target DIV */
 #ui {
 	position: relative;
-	width: 99%;
+	width: 99.5%;
 	min-width: 330px;
 	height: 99%;
-	min-height: 265px;
+	min-height: 260px;
 	border: 3px solid var(--darkgray); 	/* TODO: make main border color a variable in settings */
 	overflow: hidden;
 	padding: 0;
@@ -106,7 +106,7 @@ iframe {
 /* Spinner Template */
 .spinner {
 	width: 350px;
-	min-height: 120px;
+	min-height: 180px;
 	border: 2px solid #878787; /* dark gray */
 	border-radius: 16px;
 	box-shadow: 4px 3px 4px 1px #969696;
@@ -116,7 +116,7 @@ iframe {
 	user-select: none;
 	background-color: white;
 }
-.header {
+.spinhead {
 	margin: 15px 0 0 0;
 	font-family: monospace;
 	color: black;
@@ -135,7 +135,7 @@ iframe {
 .gears img { 
 	margin-top: 2px;
 }
-.message {
+.spinmsg {
 	border: 0px dashed black;
 	margin: 5px 0 15px 0;
 	padding: 0;

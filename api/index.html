@@ -10,16 +10,12 @@
 
 <body>
 
-<h2>SOLACE API</h2>
-
-<!-- <a href="#output">Output</a> -->
-
-<p class="devuse">DEV USE ONLY!</p>
+<h1>SOLACE API <span class="devuse">DEV USE ONLY!</span></h1>
 
 <!-- TODO: figure out how to scroll or jump to this anchor without reloading the page -->
 <a name="output"></a>
 
-<h4>Output:</h4>
+<h4 id="dtype">Output:</h4>
 
 <!-- target div -->
 <!-- TODO: replace this with input textarea so the output becomes editable / copyable by the user -->
@@ -27,15 +23,18 @@
 
 <!-- buttons -->
 <p>
-	<button class="menu" onClick="location.href=('/sae/')">SOLACE Menu</button>
-	<button class="menu" id="viewelement">View Element</button>
+	<button class="menu" onClick="location.href=('/sae/')">SOLACE App Engine</button>
+	<button class="menu" id="viewelement">View Visual Element</button>
 </p>
 
-	<!-- code for red x close window -->
-	<!-- <div id="closebtn" class="closebtn" onclick="location.href=('/sae/api/')">
+<template id="buttontpl">
+	<!-- code for red X button (close window) -->
+	<div id="closebtn" class="closebtn" onclick="location.href=('/sae/api/')">
 		<img id="redx" class="redx" src="/sae/lib/img/x-red.svg" width="50" height="50" title="Close">
 		<img id="grayx" class="blackx" src="/sae/lib/img/x.svg" width="50" height="50" title="Close">
-	</div> -->
+	</div>
+</template>
+	
 
 <!-- SOLACE Logo -->
 <template id="logotpl">	
@@ -46,6 +45,7 @@
 	
 <!-- Spinner -->
 <template id="spintpl">
+	<div id="spinbuttons"></div>
 	<div id="spinner" class="spinner">
 		<h3 id="header" class="header"></h3>
 		<div id="gears" class="gears"><img src="/sae/lib/img/gears.gif" height="90" width="110" title="Loading..."></div>

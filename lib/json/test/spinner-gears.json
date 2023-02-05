@@ -2,7 +2,7 @@
 	"tpl": "spinner",
 	"width": "800",
 	"height": "250",
-	"header": "Sample Spinner",
-    "image": "gears",
-    "message": "Using 'gears' animation"
+	"head": "Sample Spinner",
+    "img": "gears",
+    "msg": "Using 'gears' animation"
 }

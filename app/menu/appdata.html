@@ -19,79 +19,150 @@
 
 <body>
 
-<div id="appdata">
-	<div style="padding: 20px; border: 2px dashed darkred; width: 70vw;">
-		<h1>App Data Goes Here</h1>
-		<p>Need to get this working again (fix function: "getMetaData()")</p>
-	</div>	
-</div>
+<div id="appdata"></div>
 
-<!-- DEV USE: <script src="/lib/vendor/sha256.min.js"></script> -->
+<!-- DEV USE: <script src="/sae/lib/vendor/sha256.min.js"></script> -->
+
+<script src="/sae/lib/vendor/sha256.js"></script>
+
 
 <script>
-/* var html;
-// target DIV
-const targ = document.getElementById('appdata');
-// try to fetch App Data
-const data = getMetaData();
-// if we have no App Data show an error 
-// in the link, use /?action=reset option of boot.js
-if (!data) {
-	html = '<div style="text-align:center;">';
-	html +=	'<h1>Application Data Is Missing</h1>';
-	html += '<a href="/?action=reset" target="_parent" title="Try Reloading Missing Data">Try Reloading Missing Data</a>';
-	html += '</div>';
-	targ.innerHTML = html;
-}
+	// set up HTML variable
+	var html;
+	// target DIV
+	const targ = document.getElementById('appdata');
+	// try to fetch SAE metadata
+	const sae = localStorage.getItem('SOLACE_App_Engine');
+	// if we have no App Data show an error 
+	if (!sae) {
+		html = '<div style="text-align:center;">';
+		html +=	'<h1>Application Data Is Missing</h1>';
+		html += '<!-- <a href="/?action=reset" target="_parent" title="Try Reloading Missing Data">Try Reloading Missing Data</a> -->';
+		html += '</div>';
+		targ.innerHTML = html;
+	}
+	// otherwise, we have app data
+	else {	
+		let data = JSON.parse(sae);
+		// convert release-date string to JS date object
+		var rd = isoStringToDate(data.releasedate);
+		// set it to a more user-friendly format
+		const release = rd.toDateString();
+		// key status: valid
+		let valid = `
+			<span style="color:green;font-weight:bold;vertical-align:middle;">Valid Key</span> 
+			<img src="/sae/lib/img/key-green.svg" height="25" title="${data.key}" style="vertical-align:middle;">
+		`;
+		// key status: invalid
+		let invalid = `
+			<span style="color:red;font-weight:bold;vertical-align:middle;">Invalid Key</span> 
+			<img src="/sae/lib/img/key-red.svg" height="25" title="${data.key}" style="vertical-align:middle;">
+		`;
+		
+		// check if status is valid
+		let status = invalid; ;
+		let hashed = sha256(data.brand);
+		if (hashed === data.key) { status = valid; }
 
-// otherwise, we have app data
-else {	
-	// convert release-date string to JS date object
-	var rd = isoStringToDate(data.releasedate);
-	// set it to more user-friendly format
-	const release = rd.toDateString();
-	// DEV NOTE: for now, all keys are valid
-	// key status message: valid
-	keystat = '<span style="color:green;font-weight:bold;vertical-align:middle;">Valid Key</span> <img src="/lib/img/key-green.svg" height="25" title="Valid Key" style="vertical-align:middle;">';
-	// generate full path to logo image
-	const logo = data.path + data.logo;	
-	// show the results
-	html = `
-		<table border="1" cellpadding="5" cellspacing="5" align="center" style="border-collapse:collapse;">
-			<tr>
-				<th colspan="2" style="vertical-align:middle;padding:8px;background-color:#EEEEEE;">
-					<img src="${logo}" width="25" title="Logo" style="vertical-align:middle; padding: 0 5px 0 5px;">
-					${data.brand}
-				</th>
-			</tr>
-			<tr>
-				<td>Version:</td>
-				<td>${data.version} ${data.subversion}</td>
-			</tr>
-			<tr>
-				<td>Released:</td>
-				<td>${release}</td>
-			</tr>
-			<tr>
-				<td>Status:</td>
-				<td>${keystat}</td>
-			</tr>
-			<tr>
-				<td>Web:</td>
-				<td class="url"><a href="${data.site}" target="_blank">${data.site}</td>
-			</tr>	
-			<tr>
-				<td>Support:</td>
-				<td class="url"><a href="${data.support}" target="_blank">${data.support}</a></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="text-align:center;"><button type="button" onclick="notYet()" style="margin:10px 0 10px 0;">Check For Update</button></td>
-			</tr>
-		</table>
-	`;
-	// update DOM
-	targ.innerHTML = html;
-} */
+		// show the results
+		html = `
+			<table border="1" cellpadding="5" cellspacing="5" align="center" style="border-collapse:collapse;">
+				<tr>
+					<th colspan="2" style="vertical-align:middle;padding:8px;background-color:#EEEEEE;">
+						<img src="${data.logo}" width="25" title="Logo" style="vertical-align:middle; padding: 0 5px 0 5px;">
+						${data.brand}
+					</th>
+				</tr>
+				<tr>
+					<td>Version:</td>
+					<td>${data.version} ${data.subversion}</td>
+				</tr>
+				<tr>
+					<td>Released:</td>
+					<td>${release}</td>
+				</tr>
+				<tr>
+					<td>Status:</td>
+					<td>${status}</td>
+				</tr>
+				<tr>
+					<td>Web:</td>
+					<td class="url"><a href="${data.site}" target="_blank">${data.site}</td>
+				</tr>	
+				<tr>
+					<td>Support:</td>
+					<td class="url"><a href="${data.support}" target="_blank">${data.support}</a></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align:center;"><button type="button" onclick="notYet()" style="margin:10px 0 10px 0;">Check For Update</button></td>
+				</tr>
+			</table>
+		`;
+		// update DOM
+		targ.innerHTML = html;
+	}
+
+	// ISO Date string parser
+	// Accepts 1 argument: ISO date string (e.g. JSON Date)
+	// Returns: Javascript date object 
+	function isoStringToDate(isoString) {
+		// Split the string into an array based on the digit groups.
+		var dateParts = isoString.split( /\D+/ );
+		// Set up a date object with the current time.
+		var returnDate = new Date();
+		// Manually parse the parts of the string and set each part for the
+		// date. Note: Using the UTC versions of these functions is necessary
+		// because we're manually adjusting for time zones stored in the
+		// string.
+		returnDate.setUTCFullYear( parseInt( dateParts[ 0 ] ) );
+		// The month numbers are one "off" from what normal humans would expect
+		// because January == 0.
+		returnDate.setUTCMonth( parseInt( dateParts[ 1 ] - 1 ) );
+		returnDate.setUTCDate( parseInt( dateParts[ 2 ] ) );
+		// Set the time parts of the date object.
+		returnDate.setUTCHours( parseInt( dateParts[ 3 ] ) );
+		returnDate.setUTCMinutes( parseInt( dateParts[ 4 ] ) );
+		returnDate.setUTCSeconds( parseInt( dateParts[ 5 ] ) );
+		returnDate.setUTCMilliseconds( parseInt( dateParts[ 6 ] ) );
+		// Track the number of hours we need to adjust the date by based
+		// on the timezone.
+		var timezoneOffsetHours = 0;
+		// If there's a value for either the hours or minutes offset.
+		if ( dateParts[ 7 ] || dateParts[ 8 ] ) {
+			// Track the number of minutes we need to adjust the date by
+			// based on the timezone.
+			var timezoneOffsetMinutes = 0;
+			// If there's a value for the minutes offset.
+			if ( dateParts[ 8 ] ) {
+				// Convert the minutes value into an hours value.
+				timezoneOffsetMinutes = parseInt( dateParts[ 8 ] ) / 60;
+			}
+			// Add the hours and minutes values to get the total offset in
+			// hours.
+			timezoneOffsetHours = parseInt( dateParts[ 7 ] ) + timezoneOffsetMinutes;
+			// If the sign for the timezone is a plus to indicate the
+			// timezone is ahead of UTC time.
+			if ( isoString.substr( -6, 1 ) == "+" ) {
+				// Make the offset negative since the hours will need to be
+				// subtracted from the date.
+				timezoneOffsetHours *= -1;
+			}
+		}
+		// Get the current hours for the date and add the offset to get the
+		// correct time adjusted for timezone.
+		returnDate.setHours( returnDate.getHours() + timezoneOffsetHours );
+		// Return the Date object calculated from the string.
+		return returnDate;
+	}
+
+	// Not Yet: a placeholder function for links and buttons
+	// informs the user that the feature isn't implemented yet
+	function notYet() {
+		var m = 'This feature is not implemented yet';
+		console.log(m);
+		alert(m);
+		return false;
+	}
 </script>
 
 </body>

@@ -59,17 +59,17 @@ iframe {
 	/* border-top: 3px solid var(--darkgray);
 	border-left: 3px solid var(--darkgray);
 	border-right: 3px solid var(--darkgray); */
-	height: 120vh;
+	height: 99vh;
 	display: flex;
 	flex-flow: column nowrap;
+	overflow: hidden;
 }
 
 /* Main Viewer */
 #viewer {
-	margin-top: 15px;
+	height: 85vh;
 	overflow-y: auto;
 	overflow-x: hidden;
-	/* border: 2px dashed blue; */
 }
 
 /* Bottom Nav Bar */ 
@@ -90,10 +90,10 @@ iframe {
 #menu {
 	display: flex;
 	flex-flow: column nowrap;
-	width: 96%;
-	/* margin: 0 auto; */
-	padding: 10px;
 	justify-content: center;
+	width: 96%;	/* DEV NOTE: this is set to 96% for a reason! */
+	padding: 10px;
+
 }
 
 /* Menu Buttons */
@@ -271,23 +271,23 @@ a.installed:link, a.installed:visited {
 
 /* Toggle Switches - used on Settings (from w3 schools) */
 
- /* switch is the box around the slider */
- .switch {
+/* switch is the box around the slider */
+.switch {
 	position: relative;
 	display: inline-block;
 	width: 34px;
 	height: 17px;
-  }
+}
   
-  /* Hide default HTML checkbox */
-  .switch input {
+/* Hide default HTML checkbox */
+.switch input {
 	opacity: 0;
 	width: 0;
 	height: 0;
-  }
+}
   
-  /* slider button */
-  .slider {
+/* slider button */
+.slider {
 	position: absolute;
 	cursor: pointer;
 	top: 0;
@@ -297,9 +297,9 @@ a.installed:link, a.installed:visited {
 	background-color: #ccc;
 	-webkit-transition: .4s;
 	transition: .4s;
-  }
+}
   
-  .slider:before {
+.slider:before {
 	position: absolute;
 	content: "";
 	height: 16px;
@@ -309,30 +309,30 @@ a.installed:link, a.installed:visited {
 	background-color: white;
 	-webkit-transition: .4s;
 	transition: .4s;
-  }
+}
   
-  input:checked + .slider {
+input:checked + .slider {
 	background-color: #2196F3;
-  }
+}
   
-  input:focus + .slider {
+input:focus + .slider {
 	box-shadow: 0 0 1px #2196F3;
-  }
+}
   
-  input:checked + .slider:before {
+input:checked + .slider:before {
 	-webkit-transform: translateX(16px);
 	-ms-transform: translateX(16px);
 	transform: translateX(16px);
-  }
+}
   
-  /* Rounded sliders */
-  .slider.round {
+/* Rounded sliders */
+.slider.round {
 	border-radius: 17px;
-  }
+}
   
-  .slider.round:before {
+.slider.round:before {
 	border-radius: 50%;
-  } 
+} 
 
 /*
 * -------------------------------------------
@@ -341,8 +341,8 @@ a.installed:link, a.installed:visited {
 * ------------------------------------------- 
 */
 
-/* small screen - not implemented yet */
 /* 
+TODO: small screen - not implemented yet
 @media only screen and (max-height: 329px) and (max-width: 624px) {
 } 
 */
@@ -352,21 +352,16 @@ a.installed:link, a.installed:visited {
 	#container {
 		height: 99vh;
 	}
-
 	/* resize divs for vertical orientation  */
 	.menubtn {
 		padding: 0 10px 0 10px;
-		width: 16.66vw;
-		height: 60vh;
-		min-height: 185px;
+		width: 16vw;
+		height: 70vh;
 	}
 	/* change menu from column to row  */
 	#menu { 
-		/* max-width: 1200px; */
 		flex-flow: row nowrap;
-		width: 95%;
 		margin: 0 auto;
-		/* border: 2px dashed darkorange; */
 	}
 	/* change button content from row to column */
 	.fbcont {

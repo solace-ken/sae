@@ -3,7 +3,7 @@
 	"width": "",
 	"height": "",
     "icon": "",
-	"title": "Test Error!",
-    "cause": "You did something to trigger this error",
-    "solution": "If you don't want to see this error, stop doing whatever you did."
+	"title": "This Is The Error Title!",
+    "cause": "This is what went wrong",
+    "solution": "These are the steps you can take to try to fix it"
 }
